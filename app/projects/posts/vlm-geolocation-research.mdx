@@ -1,0 +1,41 @@
+---
+title: 'UCF CRCV: Scalable VLM Geolocation Inference and Data Pipeline'
+publishedAt: '2025-08-15'
+summary: 'Scaled Vision Language Model inference across GPU clusters, automating 30M+ image curation and preference pair generation.'
+techStack: 'Python, PyTorch, CUDA, Transformers, TRL, SLURM, Docker, Qwen, DeepSpeed'
+metric: '30M+ Images Processed, Cut Iteration Time'
+category: 'AI and Systems'
+---
+
+## Overview
+
+During my AI Internship at the University of Central Florida Center for Research in Computer Vision (May 2025, Aug 2025), I architected and deployed large scale vision language model training and inference infrastructure on GPU computing clusters.
+
+Our primary goal was fine tuning and evaluating vision language models on geolocation tasks, predicting geographic coordinates from ground imagery.
+
+---
+
+## Technical Architecture
+
+### 1. High Throughput Distributed GPU Sweeps
+* **Infrastructure**: Executed batched PyTorch and CUDA jobs across multi node V100 and H100 GPU clusters via SLURM.
+* **Scale**: Managed up to 30 concurrent experiments simultaneously in week long sweeps.
+* **Optimization**: Leveraged FlashAttention, PyTorch AMP, and DeepSpeed to maximize GPU compute efficiency, cutting experimental iteration timelines by weeks.
+
+### 2. Autonomous Data Pipeline for 30M+ Images
+* Automated high throughput ingestion, filtering, and curation of over 30,000,000 geographic images.
+* Built preference pair dataset generation tools using Hugging Face Transformers and TRL for Supervised Fine Tuning and Direct Preference Optimization.
+* Optimized data streaming using custom multiprocessing data loaders, saving over 100 hours of processing time per dataset.
+
+### 3. Empirical Evaluation
+* Wrote technical reports analyzing prediction error against physical ground truth.
+* Evaluated performance using Haversine distance metrics, measuring accuracy within a 25 km radius threshold.
+* Performed hyperparameter and architectural ablation studies across vision backbones, quantization regimes, and prompt formatting structures.
+
+---
+
+## Technologies Used
+
+* **Frameworks and AI**: PyTorch, Hugging Face (Transformers, Datasets, TRL, PEFT), vLLM, DeepSpeed, FlashAttention
+* **Infrastructure**: SLURM, Docker, CUDA, Linux (Ubuntu, RHEL), Conda, bash
+* **Data Processing**: OpenCV, Pillow, Albumentations, NumPy, pandas

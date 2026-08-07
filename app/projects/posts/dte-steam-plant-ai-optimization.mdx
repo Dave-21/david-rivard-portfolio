@@ -1,0 +1,44 @@
+---
+title: 'DTE Energy x LSSU: Industrial AI Steam Plant Optimization and Sensor Pipeline'
+publishedAt: '2026-04-15'
+summary: 'Engineered a fault tolerant 400+ sensor data ingestion pipeline and predictive demand models, improving accuracy from 81% to 94% with 98% uptime.'
+techStack: 'Python, PyTorch, LangGraph, MCP, Spark, Kafka, GitHub Actions, Docker'
+metric: '94% Forecast Accuracy, 90s Latency Reduction'
+category: 'Software Systems'
+---
+
+## Overview
+
+Working through Lake Superior State University in partnership with DTE Energy as a Systems Engineer (Apr 2025, Present), I architected an end to end data pipeline and optimization system for steam plant energy management.
+
+By continuously ingesting sensor telemetry across hundreds of industrial nodes, our system accurately forecasts building heating demand, enabling plant operators to optimize energy dispatch, minimize fuel consumption, and reduce operational costs.
+
+---
+
+## Technical Highlights and System Architecture
+
+### 1. Fault Tolerant Data Pipeline and High Availability Ingestion
+* **Scale**: Architected a real time streaming ETL pipeline processing continuous inputs from 400+ industrial sensors (weather telemetry, building occupancy, and OCR gas meter readings).
+* **Latency and Reliability**: Reduced end to end data processing latency by up to 90 seconds while maintaining 98% pipeline uptime.
+* Built automatic retry policies, fallback buffers, and automated anomaly detection to eliminate sensor downtime outside major power outages.
+
+### 2. Predictive Heating Demand Forecasting
+* Researched, benchmarked, and tuned deep sequence models to generalize across seasonal weather swings:
+  * Recurrent Neural Networks (RNN)
+  * Long Short-Term Memory networks (LSTM and BiLSTM)
+  * Convolutional LSTMs (ConvLSTM)
+  * Gated Recurrent Units (GRU)
+* Improved overall predictive heating demand accuracy from 81% to 94%, dramatically reducing thermal over generation.
+
+### 3. Agentic Workflow Automation and Monitoring Dashboards
+* Engineered autonomous operational workflows using LangGraph and Model Context Protocol (MCP), enforcing strict guardrails and human in the loop code verification.
+* Developed real time internal monitoring dashboards for plant engineers.
+* Standardized CI/CD pipelines via GitHub Actions for automated model training, data validation checks, and daily operational reporting.
+
+---
+
+## Technical Stack
+
+* **Machine Learning and Time Series**: PyTorch, scikit-learn, OpenCV, NumPy, pandas
+* **Data Ingestion and Pipelines**: PySpark, Apache Kafka, PostgreSQL, Redis, REST APIs
+* **Automation and DevOps**: LangGraph, MCP, Docker, GitHub Actions, Linux

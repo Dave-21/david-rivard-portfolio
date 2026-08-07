@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Next.js Build Output and Caches
+.next
+out
+build
+.vercel
+
+# Environment & Local Secrets
+.env
+.env*.local
+.env.development
+.env.production
+
+# TypeScript & Build Caches
+*.tsbuildinfo
+.eslintcache
+
+# OS Files & IDEs
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Testing
+coverage
