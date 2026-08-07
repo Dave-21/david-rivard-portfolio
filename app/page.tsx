@@ -92,19 +92,19 @@ export default function Page() {
 
         <div className="space-y-6">
           {/* LSSU x DTE ENERGY */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/dte-steam-plant-ai-optimization"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(16,185,129,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(52,211,153,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Software Engineer →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-emerald px-2.5 py-1 rounded-md w-fit">
                 Apr 2025, Present
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-emerald-800 dark:text-emerald-300">
               Lake Superior State University in partnership with DTE Energy (Remote / Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -121,7 +121,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/dte-steam-plant-ai-optimization"
-                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline gap-1"
               >
                 View System Details and Architecture →
               </Link>
@@ -129,19 +129,19 @@ export default function Page() {
           </div>
 
           {/* UCF CRCV */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/vlm-geolocation-research"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 AI Research Intern →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-blue px-2.5 py-1 rounded-md w-fit">
                 May 2025, Aug 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-blue-800 dark:text-blue-300">
               University of Central Florida, Center for Research in Computer Vision (Orlando, FL)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -166,19 +166,19 @@ export default function Page() {
           </div>
 
           {/* LSSU LLM LEAD */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-amber-500/60 dark:hover:border-amber-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/custom-llm-rag-architecture"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-amber-600 dark:hover:text-amber-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(217,119,6,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(251,191,36,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 AI Research Lead (University Research) →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-amber px-2.5 py-1 rounded-md w-fit">
                 Aug 2024, May 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-amber-800 dark:text-amber-300">
               Lake Superior State University (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -192,7 +192,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/custom-llm-rag-architecture"
-                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline gap-1"
               >
                 View LLM Architecture and RAG Details →
               </Link>
@@ -200,19 +200,19 @@ export default function Page() {
           </div>
 
           {/* LSSU SATELLITE TRACKER */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-purple-500/60 dark:hover:border-purple-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/autonomous-leo-satellite-tracker"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-purple-600 dark:hover:text-purple-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(147,51,234,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(192,132,252,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Lead Software Engineer (University Research) →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-purple px-2.5 py-1 rounded-md w-fit">
                 Aug 2024, May 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-purple-800 dark:text-purple-300">
               Lake Superior State University (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -226,7 +226,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/autonomous-leo-satellite-tracker"
-                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline gap-1"
               >
                 View Autonomous System Details →
               </Link>
@@ -234,11 +234,11 @@ export default function Page() {
           </div>
 
           {/* CHIPPEWA COUNTY CONTRACT PROJECT */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-cyan-500/60 dark:hover:border-cyan-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/chippewa-county-inventory-system"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-cyan-600 dark:hover:text-cyan-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(8,145,178,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(34,211,238,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Software Engineer (Contract Project) →
               </Link>
@@ -246,7 +246,7 @@ export default function Page() {
                 Jan 2024, May 2024
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-cyan-800 dark:text-cyan-300">
               Chippewa County Information Systems (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -263,7 +263,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/chippewa-county-inventory-system"
-                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline gap-1"
               >
                 View Web System and Migration Details →
               </Link>
@@ -271,19 +271,19 @@ export default function Page() {
           </div>
 
           {/* FREELANCE */}
-          <div className="p-6 rounded-2xl glass-card hover:shadow-md transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-500/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/scalable-etl-freelance-apps"
-                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-[1.02] origin-left transition-all duration-200 inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Freelance Software Developer →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-blue px-2.5 py-1 rounded-md w-fit">
                 Jan 2019, Dec 2022
               </span>
             </div>
-            <div className="text-sm font-bold text-subheading">
+            <div className="text-sm font-bold text-blue-800 dark:text-blue-300">
               Remote Client Projects
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -323,7 +323,7 @@ export default function Page() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {['Kubernetes', 'Docker', 'Terraform', 'AWS', 'Azure', 'GCP', 'GitOps', 'CI/CD', 'Linux', 'SLURM', 'CUDA', 'Mamba/Conda'].map((skill) => (
-                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-neutral">
+                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-blue">
                   {skill}
                 </span>
               ))}
