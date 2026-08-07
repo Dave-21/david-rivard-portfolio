@@ -5,6 +5,8 @@ import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -47,11 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        'dark text-neutral-900 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-950 transition-colors duration-200',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={cx('dark', GeistSans.variable, GeistMono.variable)}
       suppressHydrationWarning
     >
       <head>
@@ -61,10 +59,12 @@ export default function RootLayout({
               (function() {
                 try {
                   var savedTheme = localStorage.getItem('theme');
-                  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
+                  if (savedTheme === 'light') {
                     document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.setAttribute('data-theme', 'dark');
                   }
                 } catch (e) {}
               })();
@@ -78,6 +78,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

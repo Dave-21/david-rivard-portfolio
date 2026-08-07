@@ -17,10 +17,10 @@ function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <footer className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-xs text-neutral-500 dark:text-neutral-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="footer-container mt-16 pt-8 text-xs flex flex-col sm:flex-row items-center justify-between gap-4">
       <div className="flex flex-wrap items-center gap-4">
         <a
-          className="flex items-center gap-1 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          className="footer-link flex items-center gap-1"
           rel="noopener noreferrer"
           target="_blank"
           href="https://github.com/Dave-21"
@@ -29,7 +29,7 @@ export default function Footer() {
           <span>GitHub</span>
         </a>
         <a
-          className="flex items-center gap-1 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          className="footer-link flex items-center gap-1"
           rel="noopener noreferrer"
           target="_blank"
           href="https://linkedin.com/in/david-rivard-304b6a242"
@@ -38,7 +38,7 @@ export default function Footer() {
           <span>LinkedIn</span>
         </a>
         <a
-          className="flex items-center gap-1 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          className="footer-link flex items-center gap-1"
           href="mailto:davidrivard4@gmail.com"
         >
           <ArrowIcon />
@@ -46,7 +46,9 @@ export default function Footer() {
         </a>
       </div>
 
-      <p>© {new Date().getFullYear()} David Rivard. All rights reserved.</p>
+      <p className="footer-text">
+        © {new Date().getFullYear()} David Rivard. All rights reserved.
+      </p>
     </footer>
   )
 }

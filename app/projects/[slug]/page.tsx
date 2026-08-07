@@ -98,7 +98,7 @@ export default async function Project({
       <div>
         <Link
           href="/#experience"
-          className="inline-flex items-center text-xs font-semibold text-neutral-500 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors gap-1"
+          className="inline-flex items-center text-xs font-bold text-subheading hover:text-blue-600 dark:hover:text-blue-400 transition-colors gap-1"
         >
           <svg
             className="w-4 h-4"
@@ -118,35 +118,35 @@ export default async function Project({
       </div>
 
       {/* Header Info */}
-      <div className="space-y-4 pb-6 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="space-y-4 pb-6 border-b border-slate-300 dark:border-neutral-800">
         <div className="flex items-center justify-between gap-2">
           {category && (
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-3 py-1 rounded-full border border-blue-200 dark:border-blue-900/50">
+            <span className="text-xs font-bold uppercase tracking-wider badge-pill-blue px-3 py-1 rounded-full">
               {category}
             </span>
           )}
-          <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">
+          <span className="text-xs text-muted-main font-mono font-bold">
             {formatDate(publishedAt)}
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 leading-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-heading leading-tight">
           {title}
         </h1>
 
-        <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
+        <p className="text-base sm:text-lg text-body-main leading-relaxed font-medium">
           {summary}
         </p>
 
         {/* Metric Highlight Box */}
         {metric && (
-          <div className="p-4 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/50 flex items-center gap-3">
+          <div className="p-4 rounded-xl badge-pill-emerald flex items-center gap-3 shadow-sm">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <div>
-              <div className="text-xs font-semibold text-emerald-800 dark:text-emerald-300 uppercase tracking-wider">
+              <div className="text-xs font-bold uppercase tracking-wider">
                 Key Impact & Outcome
               </div>
-              <div className="text-sm font-bold text-emerald-900 dark:text-emerald-200">
+              <div className="text-sm font-extrabold">
                 {metric}
               </div>
             </div>
@@ -156,14 +156,14 @@ export default async function Project({
         {/* Tech Stack Pills */}
         {tags.length > 0 && (
           <div className="pt-2">
-            <div className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 mb-2">
+            <div className="text-xs font-bold text-muted-main mb-2">
               TECHNOLOGIES USED
             </div>
             <div className="flex flex-wrap gap-2">
               {tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200/80 dark:border-neutral-700/80"
+                  className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-neutral"
                 >
                   {tag.trim()}
                 </span>

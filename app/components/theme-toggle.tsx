@@ -8,62 +8,68 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true)
-    const isDark = document.documentElement.classList.contains('dark')
-    setTheme(isDark ? 'dark' : 'light')
+    const isLight =
+      document.documentElement.getAttribute('data-theme') === 'light' ||
+      (!document.documentElement.classList.contains('dark') &&
+        localStorage.getItem('theme') === 'light')
+    setTheme(isLight ? 'light' : 'dark')
   }, [])
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(nextTheme)
-    if (nextTheme === 'dark') {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark')
+
+    if (isCurrentlyDark) {
       document.documentElement.classList.remove('dark')
+      document.documentElement.setAttribute('data-theme', 'light')
       localStorage.setItem('theme', 'light')
+      setTheme('light')
+    } else {
+      document.documentElement.classList.add('dark')
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+      setTheme('dark')
     }
   }
 
   if (!mounted) {
-    return <div className="w-8 h-8" />
+    return <div className="w-9 h-9" />
   }
 
   return (
     <button
       onClick={toggleTheme}
-      aria-label="Toggle Theme"
+      aria-label="Toggle Light and Dark Theme"
       type="button"
-      className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="theme-toggle-btn p-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer shadow-sm flex items-center justify-center"
     >
       {theme === 'dark' ? (
+        /* Glowing Yellow Sun Icon for Dark Mode -> Switch to Light */
         <svg
-          className="w-4 h-4"
+          className="w-5 h-5 text-amber-400"
           fill="none"
           stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          />
+          <circle cx="12" cy="12" r="4" fill="currentColor" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
         </svg>
       ) : (
+        /* Solid Jet-Black Moon Icon for Light Mode -> Switch to Dark */
         <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-5 text-slate-950 fill-slate-950"
+          viewBox="0 0 20 20"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
         </svg>
       )}
     </button>
