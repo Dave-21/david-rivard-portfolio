@@ -1,22 +1,65 @@
 @import 'tailwindcss';
 
+/* CSS Custom Theme Variables - Production & Vercel Safe */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --border-card: #cbd5e1;
+  --border-subtle: #94a3b8;
+  --text-heading: #0f172a;
+  --text-body: #0f172a;
+  --text-muted: #1e293b;
+  --toggle-btn-bg: #ffffff;
+  --toggle-btn-hover: #f1f5f9;
+  --toggle-btn-border: #94a3b8;
+  --toggle-btn-text: #0f172a;
+
+  --sh-class: #1e40af;
+  --sh-identifier: #0f172a;
+  --sh-sign: #64748b;
+  --sh-string: #047857;
+  --sh-keyword: #dc2626;
+  --sh-comment: #64748b;
+  --sh-jsxliterals: #4338ca;
+  --sh-property: #c2410c;
+  --sh-entity: #c2410c;
+}
+
+html.dark,
+[data-theme='dark'],
+.dark {
+  --bg-primary: #090d16;
+  --bg-card: rgba(17, 24, 39, 0.85);
+  --border-card: rgba(51, 65, 85, 0.8);
+  --border-subtle: #1e293b;
+  --text-heading: #ffffff;
+  --text-body: #e2e8f0;
+  --text-muted: #94a3b8;
+  --toggle-btn-bg: #1e293b;
+  --toggle-btn-hover: #334155;
+  --toggle-btn-border: #475569;
+  --toggle-btn-text: #f8fafc;
+
+  --sh-class: #60a5fa;
+  --sh-identifier: #f8fafc;
+  --sh-keyword: #f87171;
+  --sh-string: #2dd4bf;
+  --sh-sign: #9ca3af;
+  --sh-comment: #94a3b8;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     min-width: 320px;
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-body) !important;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  html.dark {
-    background-color: #090d16;
-    color: #f8fafc;
-  }
-
   body {
-    background-color: transparent;
-    color: inherit;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-body) !important;
   }
 
   ::selection {
@@ -27,54 +70,32 @@
 
 /* Glassmorphism & Card System */
 .glass-card {
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  color: #0f172a;
+  color: var(--text-body) !important;
   transition: all 0.2s ease;
-}
-
-html.dark .glass-card {
-  background-color: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.8);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  color: #f8fafc;
 }
 
 /* Theme Toggle Button Component Rules */
 .theme-toggle-btn {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border: 1px solid #94a3b8 !important;
+  background-color: var(--toggle-btn-bg) !important;
+  color: var(--toggle-btn-text) !important;
+  border: 1px solid var(--toggle-btn-border) !important;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .theme-toggle-btn:hover {
-  background-color: #f1f5f9 !important;
-}
-
-html.dark .theme-toggle-btn {
-  background-color: #1e293b !important;
-  color: #f8fafc !important;
-  border: 1px solid #475569 !important;
-}
-
-html.dark .theme-toggle-btn:hover {
-  background-color: #334155 !important;
+  background-color: var(--toggle-btn-hover) !important;
 }
 
 /* Footer Specific Typography & Border */
 .footer-container {
-  border-top: 1px solid #94a3b8 !important;
-}
-
-html.dark .footer-container {
-  border-top: 1px solid #1e293b !important;
+  border-top: 1px solid var(--border-subtle) !important;
 }
 
 .footer-link {
-  color: #0f172a !important;
+  color: var(--text-heading) !important;
   font-weight: 800 !important;
   transition: color 0.2s ease;
 }
@@ -83,54 +104,30 @@ html.dark .footer-container {
   color: #2563eb !important;
 }
 
-html.dark .footer-link {
-  color: #e2e8f0 !important;
-}
-
 html.dark .footer-link:hover {
   color: #60a5fa !important;
 }
 
 .footer-text {
-  color: #0f172a !important;
+  color: var(--text-heading) !important;
   font-weight: 800 !important;
 }
 
-html.dark .footer-text {
-  color: #cbd5e1 !important;
-}
-
-/* Typography Overrides */
+/* Typography Utility Classes */
 .text-heading {
-  color: #0f172a;
-}
-
-html.dark .text-heading {
-  color: #ffffff;
+  color: var(--text-heading) !important;
 }
 
 .text-subheading {
-  color: #0f172a;
-}
-
-html.dark .text-subheading {
-  color: #cbd5e1;
+  color: var(--text-body) !important;
 }
 
 .text-body-main {
-  color: #0f172a;
-}
-
-html.dark .text-body-main {
-  color: #e2e8f0;
+  color: var(--text-body) !important;
 }
 
 .text-muted-main {
-  color: #1e293b;
-}
-
-html.dark .text-muted-main {
-  color: #94a3b8;
+  color: var(--text-muted) !important;
 }
 
 /* Custom Skill Pill Badges */
@@ -196,7 +193,7 @@ html.dark .badge-pill-amber {
 
 /* Prose Styling for MDX */
 .prose {
-  color: inherit;
+  color: var(--text-body) !important;
   max-width: none;
 }
 
@@ -247,50 +244,33 @@ html.dark .prose code {
 
 .prose p {
   @apply my-4 leading-relaxed font-normal;
-  color: #0f172a;
+  color: var(--text-body) !important;
 }
 
-html.dark .prose p {
-  color: #e2e8f0;
+.prose h1, .prose h2, .prose h3 {
+  color: var(--text-heading) !important;
 }
 
 .prose h1 {
   @apply text-3xl font-extrabold tracking-tight mt-8 mb-4;
-  color: #0f172a;
-}
-
-html.dark .prose h1 {
-  color: #ffffff;
 }
 
 .prose h2 {
   @apply text-2xl font-bold tracking-tight mt-8 mb-3 pb-2 border-b border-slate-200;
-  color: #0f172a;
 }
 
 html.dark .prose h2 {
-  color: #ffffff;
   border-color: #1e293b;
 }
 
 .prose h3 {
   @apply text-xl font-bold tracking-tight mt-6 mb-2;
-  color: #0f172a;
-}
-
-html.dark .prose h3 {
-  color: #ffffff;
 }
 
 .prose ul,
 .prose ol {
   @apply pl-6 my-4 space-y-2;
-  color: #0f172a;
-}
-
-html.dark .prose ul,
-html.dark .prose ol {
-  color: #e2e8f0;
+  color: var(--text-body) !important;
 }
 
 .prose ul {
@@ -303,12 +283,12 @@ html.dark .prose ol {
 
 .prose blockquote {
   @apply border-l-4 border-blue-600 pl-4 italic my-6 bg-slate-100 py-2 rounded-r;
-  color: #0f172a;
+  color: var(--text-body) !important;
 }
 
 html.dark .prose blockquote {
   background-color: rgba(15, 23, 42, 0.5);
-  color: #94a3b8;
+  color: #94a3b8 !important;
   border-color: #3b82f6;
 }
 
