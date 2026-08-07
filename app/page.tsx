@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Page() {
@@ -5,18 +6,33 @@ export default function Page() {
     <div className="space-y-16 py-4">
       {/* HERO SECTION */}
       <section className="space-y-6">
-        <div className="space-y-1">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-heading">
-            David Rivard
-          </h1>
-          <p className="text-xl font-bold text-subheading">
-            Software Engineer
-          </p>
-        </div>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
+          {/* Headshot Portrait Image */}
+          <div className="relative shrink-0 group">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-emerald-600 opacity-25 group-hover:opacity-60 blur-sm transition duration-300"></div>
+            <Image
+              src="/headshot.jpg"
+              alt="David Rivard Software Engineer Headshot"
+              width={960}
+              height={1280}
+              priority
+              className="relative w-32 sm:w-40 md:w-44 h-auto aspect-[3/4] object-cover rounded-2xl border-2 border-slate-300 dark:border-neutral-700 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
 
-        <p className="text-base sm:text-lg leading-relaxed text-body-main max-w-3xl font-medium">
-          Software Engineer specializing in scalable backend services, cloud infrastructure, container orchestration, and CI/CD automation. Experienced in building fault tolerant data pipelines and high availability distributed systems designed for reliability and performance.
-        </p>
+          {/* Name & Title */}
+          <div className="space-y-2 flex-1">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-heading">
+              David Rivard
+            </h1>
+            <p className="text-xl font-bold text-subheading">
+              Software Engineer
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed text-body-main font-medium pt-1">
+              Software Engineer specializing in scalable backend services, cloud infrastructure, container orchestration, and CI/CD automation. Experienced in building fault tolerant data pipelines and high availability distributed systems designed for reliability and performance.
+            </p>
+          </div>
+        </div>
 
         {/* Contact Links */}
         <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -51,7 +67,7 @@ export default function Page() {
             </svg>
             LinkedIn
           </a>
-          <span className="text-xs text-muted-main font-mono font-bold ml-auto">
+          <span className="text-xs text-muted-main font-mono font-bold w-full sm:w-auto sm:ml-auto pt-1 sm:pt-0">
             Cornell, MI • (906) 233-8015
           </span>
         </div>

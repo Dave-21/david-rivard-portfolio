@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
+import { ResearchPoster } from './poster'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -97,6 +98,8 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  ResearchPoster,
+  Poster: ResearchPoster,
 }
 
 export function CustomMDX(props) {
