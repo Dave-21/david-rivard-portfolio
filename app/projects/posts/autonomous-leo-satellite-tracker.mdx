@@ -1,9 +1,9 @@
 ---
 title: 'Autonomous LEO Satellite Detection and Tracking System'
 publishedAt: '2025-05-15'
-summary: 'Led engineering of a scalable computer vision system to detect, identify, and track Low Earth Orbit satellites autonomously using optical arrays.'
-techStack: 'Python, C++, OpenCV, PyTorch, YOLO, Hardware Integration'
-metric: 'Sub Pixel Tracking, Autonomous Control'
+summary: 'Led engineering of a scalable computer vision system to detect, identify, and track Low Earth Orbit satellites autonomously at 120 FPS.'
+techStack: 'Python, C++, OpenCV, PyTorch, YOLO, React, ASP.NET'
+metric: '120 FPS Processing, 200 GB/Day Telemetry'
 category: 'Computer Vision and Systems'
 ---
 
@@ -15,22 +15,24 @@ As Lead Software Engineer on university research at Lake Superior State Universi
 
 ## Technical Innovations and Architecture
 
-### 1. Computer Vision and Satellite Identification Pipeline
-* Developed high speed image processing pipelines capable of isolating fast moving, low brightness point targets against astronomical star fields.
-* Combined frame differencing, dynamic background subtraction, and object detection models (YOLO and OpenCV) to classify optical satellite signatures.
+### 1. High Speed Computer Vision & Telemetry Engine (120 FPS)
+* Developed high-speed image processing pipelines capable of isolating fast-moving, low-brightness point targets against astronomical star fields at **120 images per second (120 FPS)**.
+* Created frame-by-frame image processing algorithms, feature extraction matrices, and trajectory prediction sequences to perform confident visual entity matching.
+* Combined frame differencing, dynamic background subtraction, and object detection models (YOLO and OpenCV) to classify optical satellite signatures in high-noise environments.
 
-### 2. Orbital Trajectory Prediction
-* Implemented real time orbital trajectory algorithms using Two Line Element (TLE) sets and SGP4 propagation models.
-* Calculated target azimuth and elevation angles to drive automated motor mounts, ensuring continuous closed loop camera tracking across pass windows.
+### 2. Orbital Trajectory Prediction & Autonomous Control
+* Implemented real-time orbital trajectory algorithms using Two Line Element (TLE) sets and SGP4 propagation models.
+* Calculated target azimuth and elevation angles to drive automated motor mounts, ensuring continuous closed-loop camera tracking across pass windows.
+* Low-latency motor control loops built in C++ and Python delivered autonomous target acquisition without manual operator intervention.
 
-### 3. Edge Computing and Hardware Integration
-* Integrated optical sensor arrays with Linux edge hardware and embedded controllers.
-* Implemented low latency motor control loops in C++ and Python, delivering autonomous target acquisition without manual operator intervention.
+### 3. Full-Stack Web Dashboards & Telemetry Analytics (200 GB/Day)
+* Built secure full-stack web dashboards using React and ASP.NET MVC server-side APIs for live system observability, serving **300 active users** and processing up to **200 GB of telemetry data daily**.
+* Built real-time analytics pipelines to record tracking metrics, flag structural verification anomalies, and monitor system health.
 
 ---
 
 ## Key Technologies
 
-* **Languages**: Python, C++, C
-* **Vision and ML**: OpenCV, PyTorch, YOLO, Pillow, Albumentations
-* **Hardware and Edge**: Embedded Linux, Serial Protocols
+* **Languages**: Python, C++, C, C#, TypeScript/JavaScript
+* **Vision and ML**: OpenCV, PyTorch, YOLO, Pillow, ML.NET
+* **Web and Infrastructure**: React, ASP.NET, Embedded Linux, REST APIs, Serial Protocols

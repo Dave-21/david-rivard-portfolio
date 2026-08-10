@@ -97,12 +97,15 @@ export default function Page() {
 
       {/* EXPERIENCE SECTION */}
       <section id="experience" className="space-y-8">
-        <div>
+        <div className="space-y-1.5">
           <h2 className="text-2xl font-extrabold tracking-tight text-heading">
             Professional Experience
           </h2>
           <p className="text-sm font-semibold text-subheading">
-            Engineering roles across cloud infrastructure, data pipelines, backend services, and automated systems. Click any position title to view full system details.
+            Engineering roles across cloud infrastructure, data pipelines, backend services, and automated systems.
+          </p>
+          <p className="text-xs font-bold text-blue-600 dark:text-blue-400">
+            Click any position title to view full system details.
           </p>
         </div>
 

@@ -9,36 +9,35 @@ category: 'Software Systems'
 
 ## Overview
 
-Working through Lake Superior State University in partnership with DTE Energy as a Systems Engineer (Apr 2025, Present), I architected an end to end data pipeline and optimization system for steam plant energy management.
+Working through Lake Superior State University in partnership with DTE Energy as a Systems Engineer (Apr 2025, Present), I architected an end-to-end data pipeline and optimization system for steam plant energy management.
 
-By continuously ingesting sensor telemetry across hundreds of industrial nodes, our system accurately forecasts building heating demand, enabling plant operators to optimize energy dispatch, minimize fuel consumption, and reduce operational costs.
+By continuously ingesting sensor telemetry across over 400 industrial nodes, our system accurately forecasts building heating demand, enabling plant operators to optimize energy dispatch, minimize fuel consumption, and reduce operational costs.
 
 ---
 
 ## Technical Highlights and System Architecture
 
 ### 1. Fault Tolerant Data Pipeline and High Availability Ingestion
-* **Scale**: Architected a real time streaming ETL pipeline processing continuous inputs from 400+ industrial sensors (weather telemetry, building occupancy, and OCR gas meter readings).
-* **Latency and Reliability**: Reduced end to end data processing latency by up to 90 seconds while maintaining 98% pipeline uptime.
-* Built automatic retry policies, fallback buffers, and automated anomaly detection to eliminate sensor downtime outside major power outages.
+* **Scale**: Architected a real-time streaming ETL pipeline processing continuous inputs from 400+ industrial sensors (weather telemetry, building occupancy feeds, and OCR gas meter readings).
+* **Multi-Modal Feed Ingestion**: Integrated asynchronous OCR document processing using Tesseract to parse unstructured physical logs, alongside facial detection via DeepFace for live building occupancy tracking.
+* **Latency and Reliability**: Reduced end-to-end data processing latency by up to 90 seconds while maintaining 98% pipeline uptime with versioned artifact fallbacks and automatic retry scheduling.
 
 ### 2. Predictive Heating Demand Forecasting
-* Researched, benchmarked, and tuned deep sequence models to generalize across seasonal weather swings:
-  * Recurrent Neural Networks (RNN)
-  * Long Short-Term Memory networks (LSTM and BiLSTM)
+* Researched, benchmarked, and tuned deep time-series neural network architectures optimized to prevent pattern overfitting and generalize across seasonal weather swings:
+  * Recurrent Neural Networks (RNN, LSTM, BiLSTM, GRU)
   * Convolutional LSTMs (ConvLSTM)
-  * Gated Recurrent Units (GRU)
-* Improved overall predictive heating demand accuracy from 81% to 94%, dramatically reducing thermal over generation.
+  * Minimal-variable neural network architectures tailored for stable generalization
+* Improved overall predictive heating demand accuracy from 81% to 94%, dramatically reducing thermal over-generation.
 
 ### 3. Agentic Workflow Automation and Monitoring Dashboards
-* Engineered autonomous operational workflows using LangGraph and Model Context Protocol (MCP), enforcing strict guardrails and human in the loop code verification.
-* Developed real time internal monitoring dashboards for plant engineers.
-* Standardized CI/CD pipelines via GitHub Actions for automated model training, data validation checks, and daily operational reporting.
+* Engineered autonomous operational workflows using LangGraph and Model Context Protocol (MCP), enforcing strict guardrails and human-in-the-loop code verification.
+* Developed real-time internal monitoring web dashboards for plant engineers.
+* Standardized enterprise GitOps pipelines via GitHub Actions for automated model retraining, programmatic validation checks, threshold tuning, and daily operational reporting.
 
 ---
 
 ## Technical Stack
 
-* **Machine Learning and Time Series**: PyTorch, scikit-learn, OpenCV, NumPy, pandas
+* **Machine Learning and Time Series**: PyTorch, scikit-learn, OpenCV, Tesseract, DeepFace, NumPy, pandas
 * **Data Ingestion and Pipelines**: PySpark, Apache Kafka, PostgreSQL, Redis, REST APIs
 * **Automation and DevOps**: LangGraph, MCP, Docker, GitHub Actions, Linux
