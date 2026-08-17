@@ -9,7 +9,7 @@ export default function Page() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
           {/* Headshot Portrait Image */}
           <div className="relative shrink-0 group">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-emerald-600 opacity-25 group-hover:opacity-60 blur-sm transition duration-300"></div>
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 opacity-25 group-hover:opacity-60 blur-sm transition duration-300"></div>
             <Image
               src="/headshot.jpg"
               alt="David Rivard Software Engineer Headshot"
@@ -79,16 +79,16 @@ export default function Page() {
             <div className="text-[11px] text-subheading font-bold">Software Development</div>
           </div>
           <div className="py-3 px-3 rounded-xl glass-card text-center flex flex-col justify-center">
-            <div className="text-lg sm:text-xl font-extrabold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">3.9</div>
+            <div className="text-lg sm:text-xl font-extrabold text-blue-600 dark:text-blue-400 whitespace-nowrap">3.9</div>
             <div className="text-[11px] text-subheading font-bold">GPA (B.S. CS)</div>
           </div>
           <div className="py-3 px-3 rounded-xl glass-card text-center flex flex-col justify-center">
-            <div className="text-base sm:text-lg font-extrabold text-purple-600 dark:text-purple-400 whitespace-nowrap">High Throughput</div>
+            <div className="text-base sm:text-lg font-extrabold text-blue-600 dark:text-blue-400 whitespace-nowrap">High Throughput</div>
             <div className="text-[11px] text-subheading font-bold">ETL & Data Pipelines</div>
           </div>
           <div className="py-3 px-3 rounded-xl glass-card text-center flex flex-col justify-center">
-            <div className="text-base sm:text-lg font-extrabold text-amber-600 dark:text-amber-400 whitespace-nowrap">Multi Node</div>
-            <div className="text-[11px] text-subheading font-bold">Linux GPU Clusters</div>
+            <div className="text-base sm:text-lg font-extrabold text-blue-600 dark:text-blue-400 whitespace-nowrap">Full Stack</div>
+            <div className="text-[11px] text-subheading font-bold">Web & Cloud Systems</div>
           </div>
         </div>
       </section>
@@ -111,19 +111,19 @@ export default function Page() {
 
         <div className="space-y-6">
           {/* LSSU x DTE ENERGY */}
-          <div className="p-6 rounded-2xl glass-card hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/dte-steam-plant-ai-optimization"
-                className="text-lg font-extrabold text-heading hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(16,185,129,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(52,211,153,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Software Engineer →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-emerald px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
                 Apr 2025, Present
               </span>
             </div>
-            <div className="text-sm font-bold text-emerald-800 dark:text-emerald-300">
+            <div className="text-sm font-bold text-subheading">
               Lake Superior State University in partnership with DTE Energy (Remote / Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -140,7 +140,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/dte-steam-plant-ai-optimization"
-                className="inline-flex items-center text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
               >
                 View System Details and Architecture →
               </Link>
@@ -148,7 +148,7 @@ export default function Page() {
           </div>
 
           {/* UCF CRCV */}
-          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/vlm-geolocation-research"
@@ -156,11 +156,11 @@ export default function Page() {
               >
                 AI Research Intern →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-blue px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
                 May 2025, Aug 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-blue-800 dark:text-blue-300">
+            <div className="text-sm font-bold text-subheading">
               University of Central Florida, Center for Research in Computer Vision (Orlando, FL)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -185,19 +185,19 @@ export default function Page() {
           </div>
 
           {/* LSSU LLM LEAD */}
-          <div className="p-6 rounded-2xl glass-card hover:border-amber-500/60 dark:hover:border-amber-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/custom-llm-rag-architecture"
-                className="text-lg font-extrabold text-heading hover:text-amber-600 dark:hover:text-amber-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(217,119,6,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(251,191,36,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 AI Research Lead (University Research) →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-amber px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
                 Aug 2024, May 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-amber-800 dark:text-amber-300">
+            <div className="text-sm font-bold text-subheading">
               Lake Superior State University (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -211,7 +211,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/custom-llm-rag-architecture"
-                className="inline-flex items-center text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
               >
                 View LLM Architecture and RAG Details →
               </Link>
@@ -219,19 +219,19 @@ export default function Page() {
           </div>
 
           {/* LSSU SATELLITE TRACKER */}
-          <div className="p-6 rounded-2xl glass-card hover:border-purple-500/60 dark:hover:border-purple-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/autonomous-leo-satellite-tracker"
-                className="text-lg font-extrabold text-heading hover:text-purple-600 dark:hover:text-purple-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(147,51,234,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(192,132,252,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Lead Software Engineer (University Research) →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-purple px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
                 Aug 2024, May 2025
               </span>
             </div>
-            <div className="text-sm font-bold text-purple-800 dark:text-purple-300">
+            <div className="text-sm font-bold text-subheading">
               Lake Superior State University (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -245,7 +245,7 @@ export default function Page() {
             <div className="pt-2">
               <Link
                 href="/projects/autonomous-leo-satellite-tracker"
-                className="inline-flex items-center text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
               >
                 View Autonomous System Details →
               </Link>
@@ -253,11 +253,11 @@ export default function Page() {
           </div>
 
           {/* CHIPPEWA COUNTY CONTRACT PROJECT */}
-          <div className="p-6 rounded-2xl glass-card hover:border-cyan-500/60 dark:hover:border-cyan-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/chippewa-county-inventory-system"
-                className="text-lg font-extrabold text-heading hover:text-cyan-600 dark:hover:text-cyan-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(8,145,178,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(34,211,238,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
+                className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
                 Software Engineer (Contract Project) →
               </Link>
@@ -265,24 +265,24 @@ export default function Page() {
                 Jan 2024, May 2024
               </span>
             </div>
-            <div className="text-sm font-bold text-cyan-800 dark:text-cyan-300">
+            <div className="text-sm font-bold text-subheading">
               Chippewa County Information Systems (Sault Ste. Marie, MI)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Re-platformed an obsolete Access based county management system into a scalable modern web application, reducing critical reporting issues by nearly 45%.
+                Re-platformed an obsolete Microsoft Access database into a scalable MySQL/MariaDB web application with RESTful APIs, reducing reporting errors by 45%.
               </li>
               <li>
-                Designed and implemented RESTful APIs for high throughput asset tracking and document management, improving system wide data processing speeds by over 70%.
+                Engineered zero-downtime ETL migration scripts to transfer legacy records while ensuring complete data integrity and verification.
               </li>
               <li>
-                Engineered secure data pipelines to seamlessly migrate legacy system data to modern relational databases with zero operational downtime while ensuring data integrity.
+                Optimized relational database queries and indexing strategies, increasing search and transaction processing speeds by over 70%.
               </li>
             </ul>
             <div className="pt-2">
               <Link
                 href="/projects/chippewa-county-inventory-system"
-                className="inline-flex items-center text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline gap-1"
+                className="inline-flex items-center text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline gap-1"
               >
                 View Web System and Migration Details →
               </Link>
@@ -290,7 +290,7 @@ export default function Page() {
           </div>
 
           {/* FREELANCE */}
-          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-500/60 transition-all duration-200 space-y-3">
+          <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/scalable-etl-freelance-apps"
@@ -298,11 +298,11 @@ export default function Page() {
               >
                 Freelance Software Developer →
               </Link>
-              <span className="text-xs font-mono font-bold badge-pill-blue px-2.5 py-1 rounded-md w-fit">
+              <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
                 Jan 2019, Dec 2022
               </span>
             </div>
-            <div className="text-sm font-bold text-blue-800 dark:text-blue-300">
+            <div className="text-sm font-bold text-subheading">
               Remote Client Projects
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
@@ -408,11 +408,11 @@ export default function Page() {
                   B.S. in Computer Science
                 </p>
               </div>
-              <span className="text-xs font-mono font-bold badge-pill-emerald px-2 py-1 rounded">
+              <span className="text-xs font-mono font-bold badge-pill-blue px-2 py-1 rounded">
                 3.9 GPA
               </span>
             </div>
-            <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400 pt-1">
+            <p className="text-xs font-bold text-subheading pt-1">
               Status: Graduated
             </p>
             <p className="text-xs text-body-main pt-2 leading-relaxed">
@@ -428,19 +428,19 @@ export default function Page() {
           <div className="p-6 rounded-2xl glass-card space-y-3">
             <ul className="space-y-2 text-xs text-body-main font-medium">
               <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">★</span>
+                <span className="text-blue-600 dark:text-blue-400 font-bold">★</span>
                 <span><strong className="text-heading font-bold">Dean’s List:</strong> Consecutively awarded 2021, 2022, 2023, 2024, 2025</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">★</span>
+                <span className="text-blue-600 dark:text-blue-400 font-bold">★</span>
                 <span><strong className="text-heading font-bold">C# Programming Winner:</strong> Business Professionals of America Michigan 2023</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">★</span>
+                <span className="text-blue-600 dark:text-blue-400 font-bold">★</span>
                 <span><strong className="text-heading font-bold">Python Programming Winner:</strong> Business Professionals of America Michigan 2023</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-500 font-bold">♥</span>
+                <span className="text-blue-600 dark:text-blue-400 font-bold">♥</span>
                 <span><strong className="text-heading font-bold">Volunteer Work:</strong> Business Professionals of America, Escanaba River Association, Bay College, and LSSU</span>
               </li>
             </ul>
