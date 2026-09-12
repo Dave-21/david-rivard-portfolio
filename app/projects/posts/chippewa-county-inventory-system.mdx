@@ -8,27 +8,35 @@ techStack: 'PHP, MySQL, MariaDB, JavaScript, Apache, Linux, RESTful APIs, HTML5,
 
 ## The Problem
 
-County staff were tracking physical equipment, property, and official documents using a shared desktop Microsoft Access database.
+County staff had been tracking physical equipment, property, and official documents using a shared desktop Microsoft Access database. Concurrent access caused frequent file locking, slow query response, and data corruption risks.
 
-Because Access was not built for multiple people to use at once, staff had frequent problems:
-
-* Files would lock up when two people opened them at the same time.
-* Searches and record lookups were slow.
-* The file was at risk of getting corrupted during edits.
-
-As a Software Engineer on contract for Chippewa County Information Systems (Jan 2024 - May 2024), I was hired to replace the desktop file with a secure, centralized web application accessible from standard web browsers on the county network.
+As a Software Engineer on contract for Chippewa County Information Systems (Jan 2024 - May 2024), I was hired to replace the desktop file with a secure, centralized web application and RESTful backend accessible from standard browsers on the county network.
 
 ---
 
-## What I Built
+## Database Modernization & Migration
 
-* **Database migration**: Designed a clean relational schema in MySQL and MariaDB, wrote migration scripts in PHP and SQL, and migrated all historical records with zero data loss.
-* **Fast web interface**: Built a clean interface in vanilla JavaScript using Fetch and AJAX so staff could search, filter, and edit records instantly without full page reloads.
-* **Secure backend APIs**: Wrote modular PHP REST endpoints using PDO prepared statements to handle lookups, edits, and file uploads securely.
-* **Custom admin dashboard**: Built dedicated in-app admin pages for adding users, managing roles, and setting department permissions without exposing raw database tools.
-* **Audit log viewer**: Added an audit history page with timestamps and user names so administrators can see who modified any record.
-* **Export tools**: Built one-click report tools so staff can export filtered data to CSV, JSON, or formatted PDF files for county audits.
-* **Server setup**: Deployed the app on a dedicated Linux virtual machine with automated daily backup cron jobs and strict file permissions.
+* **Relational schema design**: Designed a normalized relational database schema in MySQL and MariaDB to eliminate redundant fields and enforce referential integrity with foreign keys.
+* **Zero-downtime migration**: Wrote automated migration scripts in PHP and SQL to extract, validate, and transfer thousands of historical records without data loss.
+* **Integrity validation**: Verified record row counts and data checksums before and after the cutover to ensure complete data fidelity.
+
+---
+
+## Full-Stack Web Application & REST APIs
+
+* **Secure backend APIs**: Built modular PHP REST endpoints using PDO prepared statements to protect against SQL injection while handling searches, record edits, and file uploads.
+* **Asynchronous interface**: Built a responsive frontend in vanilla JavaScript using Fetch and AJAX, enabling staff to search, filter, and edit records instantly without full page reloads.
+* **Server routing**: Configured Apache rewrite rules to route API requests through a central controller while serving static assets directly.
+
+---
+
+## Administration, Auditing & Deployment
+
+* **Custom admin console**: Built native in-app administration interfaces for managing user accounts, department assignments, and permissions without exposing database management tools to non-technical staff.
+* **Access control & security**: Implemented granular role-based access control (RBAC) with secure session handling and bcrypt password hashing.
+* **Audit log viewer**: Developed an audit history view with formatted timestamps and user attribution to track historical record modifications.
+* **Compliance exports**: Built export utilities enabling staff to generate and download filtered compliance reports in CSV, JSON, and formatted PDF formats.
+* **Server hardening**: Deployed on a dedicated Linux virtual machine with automated daily backup cron jobs and strict file permissions.
 
 ---
 

@@ -7,40 +7,28 @@ type SkillDomain = {
   id: string
   title: string
   subtitle: string
-  accentColor: {
-    dot: string
-    skillPill: string
-  }
   subCategories: SubCategory[]
 }
 
 const SKILL_DOMAINS: SkillDomain[] = [
   {
     id: 'ai-ml',
-    title: 'AI, Machine Learning & Computer Vision',
+    title: 'AI & Machine Learning',
     subtitle:
-      'Deep learning architectures, computer vision pipelines, acceleration runtimes, and agentic workflows.',
-    accentColor: {
-      dot: 'bg-blue-500',
-      skillPill: 'badge-pill-blue',
-    },
+      'Deep learning models, vision pipelines, acceleration runtimes, and agentic workflows.',
     subCategories: [
       {
         name: 'Deep Learning & LLMs',
         skills: [
           'PyTorch',
           'Keras',
-          'Hugging Face Transformers',
-          'Hugging Face Datasets',
-          'Hugging Face Accelerate',
-          'TRL',
-          'PEFT',
-          'LoRA / QLoRA',
+          'Transformers',
           'Qwen2.5-VL',
           'Kimi-VL',
-          'Supervised Fine-Tuning (SFT)',
+          'LoRA / QLoRA',
           'Direct Preference Optimization (DPO)',
           'SimPO',
+          'Supervised Fine-Tuning (SFT)',
           'Curriculum Learning',
           'ML.NET',
         ],
@@ -49,18 +37,15 @@ const SKILL_DOMAINS: SkillDomain[] = [
         name: 'Computer Vision',
         skills: [
           'OpenCV',
-          'Pillow (PIL)',
-          'Albumentations',
           'YOLO (Object Detection)',
+          'Tesseract OCR',
+          'DeepFace',
+          'Albumentations',
+          'Pillow (PIL)',
           'Frame Differencing',
           'Background Subtraction',
           'Image Geolocation',
           'Haversine Distance',
-          'Tesseract OCR',
-          'DeepFace',
-          'Visual Reasoning',
-          'Scene Understanding',
-          'Image Augmentation',
         ],
       },
       {
@@ -70,38 +55,31 @@ const SKILL_DOMAINS: SkillDomain[] = [
           'DeepSpeed',
           'FlashAttention-2',
           'PyTorch AMP',
-          'FP8 Quantization',
-          'NF4 Quantization',
-          'INT8 Quantization',
           'CUDA',
           'bitsandbytes',
+          'FP8 / INT8 Quantization',
           'Batched Inference',
         ],
       },
       {
-        name: 'AI Tools & Agents',
+        name: 'Agents & RAG',
         skills: [
           'LangGraph',
           'Model Context Protocol (MCP)',
           'Claude Code',
-          'Prompt Engineering',
-          'Prompt Ablation',
           'RAG Pipelines',
-          'Vector Retrieval',
+          'Vector Databases',
           'Semantic Reranking',
+          'Prompt Engineering',
         ],
       },
     ],
   },
   {
-    id: 'languages-frameworks',
-    title: 'Languages & Web Engineering',
+    id: 'software-engineering',
+    title: 'Software Engineering',
     subtitle:
-      'Core programming languages, backend frameworks, API architecture, and full stack systems.',
-    accentColor: {
-      dot: 'bg-purple-500',
-      skillPill: 'badge-pill-purple',
-    },
+      'Core programming languages, web frameworks, desktop software, and system design.',
     subCategories: [
       {
         name: 'Programming Languages',
@@ -110,9 +88,9 @@ const SKILL_DOMAINS: SkillDomain[] = [
           'C++',
           'C',
           'C#',
-          'Go',
           'TypeScript',
           'JavaScript',
+          'Go',
           'PHP',
           'SQL',
           'Bash / Shell',
@@ -121,44 +99,51 @@ const SKILL_DOMAINS: SkillDomain[] = [
         ],
       },
       {
-        name: 'Web & Backend Frameworks',
+        name: 'Web & APIs',
         skills: [
           'React',
           'Next.js',
-          'ASP.NET MVC',
-          '.NET Core',
+          'Node.js',
+          'FastAPI',
           'Django',
           'Flask',
-          'FastAPI',
+          'ASP.NET Core',
           'RESTful APIs',
-          'Apache (mod_rewrite)',
           'Vite',
           'Tailwind CSS',
           'AJAX / Fetch',
         ],
       },
       {
-        name: 'Systems & Architecture',
+        name: 'Desktop & Mobile',
+        skills: [
+          'WPF',
+          'WinUI 3',
+          'WinForms',
+          '.NET MAUI',
+          'Blazor',
+          'Razor Pages',
+          'XAML',
+        ],
+      },
+      {
+        name: 'Architecture & Systems',
         skills: [
           'Data Structures & Algorithms',
-          'Object-Oriented Design (OOD)',
+          'Object-Oriented Design',
           'Multithreading',
-          'Asynchronous Programming',
+          'Asynchronous I/O',
           'Serial Protocols (RS-232)',
-          'Unit Testing & Verification',
+          'Unit Testing',
         ],
       },
     ],
   },
   {
     id: 'data-engineering',
-    title: 'Data Engineering & Databases',
+    title: 'Data Engineering',
     subtitle:
-      'High throughput telemetry ingestion, streaming pipelines, relational design, and query optimization.',
-    accentColor: {
-      dot: 'bg-emerald-500',
-      skillPill: 'badge-pill-emerald',
-    },
+      'Telemetry ingestion, streaming pipelines, database architecture, and query optimization.',
     subCategories: [
       {
         name: 'Data Pipelines & Streaming',
@@ -172,7 +157,6 @@ const SKILL_DOMAINS: SkillDomain[] = [
           'Batch Processing',
           'Pandas',
           'NumPy',
-          'Geocoding (GeoNames, OSM)',
         ],
       },
       {
@@ -196,31 +180,25 @@ const SKILL_DOMAINS: SkillDomain[] = [
           'Query Optimization',
           'ACID Transactions',
           'Referential Integrity',
-          'Checksum Verification',
           'PDO Prepared Statements',
         ],
       },
     ],
   },
   {
-    id: 'cloud-devops-hpc',
-    title: 'Platform, DevOps & High-Performance Computing',
+    id: 'cloud-infrastructure',
+    title: 'Cloud & Infrastructure',
     subtitle:
-      'Multi node GPU clusters, container orchestration, Linux systems, and automated CI/CD.',
-    accentColor: {
-      dot: 'bg-amber-500',
-      skillPill: 'badge-pill-amber',
-    },
+      'GPU cluster management, container orchestration, Linux systems, and automated CI/CD.',
     subCategories: [
       {
         name: 'High-Performance Computing (HPC)',
         skills: [
           'SLURM Workload Manager',
           'Multi-Node GPU Clusters',
-          'NVIDIA H100 GPUs',
-          'NVIDIA V100 GPUs',
+          'NVIDIA H100',
+          'NVIDIA V100',
           'CUDA Environments',
-          'CUDA / GCC Compatibility',
           'Parallel Experiment Sweeps',
           'Checkpoint Evaluation',
         ],
@@ -237,7 +215,7 @@ const SKILL_DOMAINS: SkillDomain[] = [
         ],
       },
       {
-        name: 'Cloud & CI/CD Automation',
+        name: 'Cloud & CI/CD',
         skills: [
           'AWS',
           'Azure',
@@ -245,7 +223,6 @@ const SKILL_DOMAINS: SkillDomain[] = [
           'GitHub Actions CI/CD',
           'Terraform',
           'GitOps',
-          'Automated Pipeline Testing',
           'Virtual Machine Deployment',
         ],
       },
@@ -259,10 +236,10 @@ export function SkillsSection() {
       {SKILL_DOMAINS.map((domain) => (
         <div
           key={domain.id}
-          className="p-6 rounded-2xl glass-card space-y-4 flex flex-col justify-between"
+          className="p-6 rounded-2xl glass-card space-y-5 flex flex-col justify-between"
         >
           <div className="space-y-4">
-            {/* Clean, Uncluttered Domain Header */}
+            {/* Simple, Crisp Header */}
             <div className="pb-3 border-b border-slate-200/80 dark:border-neutral-800/80">
               <h3 className="text-lg font-extrabold text-heading">
                 {domain.title}
@@ -272,23 +249,18 @@ export function SkillsSection() {
               </p>
             </div>
 
-            {/* Sub-Category Groups */}
+            {/* Clean Sub-Category Groups */}
             <div className="space-y-4">
               {domain.subCategories.map((sub) => (
-                <div key={sub.name} className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${domain.accentColor.dot}`}
-                    />
-                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-muted-main">
-                      {sub.name}
-                    </h4>
-                  </div>
+                <div key={sub.name} className="space-y-1.5">
+                  <h4 className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">
+                    {sub.name}
+                  </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {sub.skills.map((skill) => (
                       <span
                         key={skill}
-                        className={`text-xs font-mono font-medium px-2.5 py-1 rounded-md ${domain.accentColor.skillPill} transition-colors`}
+                        className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-neutral-800/80 text-neutral-800 dark:text-neutral-200 border border-slate-200 dark:border-neutral-700/60 hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-colors"
                       >
                         {skill}
                       </span>

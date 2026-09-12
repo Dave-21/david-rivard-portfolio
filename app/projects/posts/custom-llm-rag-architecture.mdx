@@ -8,20 +8,30 @@ techStack: 'Python, PyTorch, Hugging Face Transformers, Hugging Face Datasets, H
 
 ## The Goal
 
-Instead of just calling paid APIs, I wanted to understand how language models work under the hood by building one in code.
-
-At Lake Superior State University (Aug 2024 - May 2025), I implemented Transformer models from scratch in PyTorch. The goal was to train small, specialized models on local GPUs and connect them to a semantic search pipeline (RAG) so the model answers technical questions using real documents instead of hallucinating.
+To understand language model internals from first principles rather than consuming hosted API endpoints, I implemented autoregressive Transformer models from scratch in PyTorch. The project focused on training compact models on local GPUs and connecting them to a semantic search pipeline (RAG) to ground responses in verified reference manuals.
 
 ---
 
-## What I Built
+## Transformer Architecture from Scratch
 
-* **Transformer from scratch**: Wrote the complete Transformer architecture in PyTorch, including multi-head self-attention and positional encodings.
-* **Custom tokenizers**: Built Byte-Pair Encoding (BPE) tokenizers and token-packing data loaders to pack text tightly and avoid wasting GPU memory on padding tokens.
-* **Efficient fine-tuning**: Tested LoRA and QLoRA adapters with 4-bit and 8-bit quantization (bitsandbytes) to train models under strict GPU memory limits.
-* **Vector search pipeline**: Built a document processing pipeline that chunks and embeds technical manuals into a vector database for similarity search.
-* **Answer grounding**: Added a semantic reranking step to pull the most relevant reference passages, ensuring answers cite real source documents.
-* **Faculty presentation**: Designed a research poster explaining Transformer attention mechanisms and gave live demos to university faculty and leadership.
+* **Self-attention mechanics**: Coded the core Transformer architecture in PyTorch, implementing multi-head self-attention, scaled dot-product calculations, and rotary positional encodings.
+* **Tokenization & data packing**: Built Byte-Pair Encoding (BPE) tokenizers and custom token-packing data loaders to maximize GPU training throughput and eliminate padding waste.
+* **Memory-efficient fine-tuning**: Tested LoRA and QLoRA adapters with 4-bit and 8-bit quantization (bitsandbytes) to evaluate parameter-efficient training quality on constrained local GPUs.
+
+---
+
+## Semantic Search & Document Grounding
+
+* **Document ingestion**: Built an automated document processing pipeline that parses, chunks, and embeds technical manuals and academic papers into dense vector representations.
+* **Similarity search**: Stored embeddings in a vector database and implemented similarity search using cosine distance to pull relevant context passages for user queries.
+* **Answer verification**: Added a semantic reranking step to prioritize high-confidence context snippets, ensuring generated responses cite verified reference passages.
+
+---
+
+## Faculty Presentation & Research
+
+* **Attention weight analysis**: Analyzed attention weight distributions across network layers to evaluate how self-attention heads learn syntactic and semantic token relationships.
+* **Formal demonstration**: Authored a formal research poster and delivered live technical demonstrations to university faculty, department chairs, and the University President.
 
 <ResearchPoster
   title="Educational AI Enablement & LLM Architecture Research Poster"

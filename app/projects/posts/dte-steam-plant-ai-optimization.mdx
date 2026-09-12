@@ -2,50 +2,41 @@
 title: 'Industrial Steam Plant Optimization'
 publishedAt: '2026-04-15'
 dateRange: 'Apr 2025 - Present'
-summary: 'Built a sensor pipeline across 400+ industrial sensors and trained PyTorch time-series models to forecast heating demand, improving accuracy from 81% to 94%.'
+summary: 'Built a sensor pipeline across 400+ industrial sensors and trained PyTorch time-series models from scratch to forecast heating demand, improving accuracy from 81% to 94%.'
 techStack: 'Python, PyTorch, LangGraph, Model Context Protocol (MCP), Claude Code, PySpark, Apache Kafka, PostgreSQL, Redis, OpenCV, Tesseract OCR, DeepFace, Docker, GitHub Actions, Linux, NumPy, pandas, scikit-learn, REST APIs'
 ---
 
 ## The Problem
 
-The university heating plant was built in 1969 and heats 17 campus buildings through underground steam pipes. It runs on three large natural gas boilers with about 3,400 total boiler horsepower.
+The university heating plant runs three natural gas boilers (~3,400 boiler horsepower total) to heat 17 campus buildings. Because steam boilers and large buildings have long thermal ramp times, operators cannot react quickly when outdoor temperatures shift. Underestimating demand leaves buildings cold, while overestimating burns excess natural gas and vents expensive steam into the air.
 
-Steam boilers take hours to warm up, and large buildings take time to heat up or cool down:
-
-* If operators underestimate how much heat is needed, buildings get cold and the plant has to scramble to catch up.
-* If they overestimate, the boilers burn extra gas and vent expensive steam into the air.
-
-For years, operators had to manually guess boiler settings based on past experience and outdoor temp sensors. The goal of this project was to give operators an accurate next-day hourly forecast so they can adjust boiler output before big weather changes hit.
+The goal of this grant-funded project with DTE Energy was to build an automated forecasting system giving operators an accurate next-day hourly demand prediction.
 
 ---
 
-## The Data Pipeline
+## Sensor Ingestion & Pipeline Architecture
 
-The system pulls live data from over 400 sensors across the plant and connected buildings:
-
-* **Messy sensor data**: Industrial sensors frequently lose power or drop off the network. I built an ingestion pipeline in Python using Kafka and Redis caching. If a sensor drops offline, the system uses the last good reading and retries in the background. This kept the pipeline at 98% uptime and cut data delays by up to 90 seconds.
-* **Reading gas meters with OCR**: Several gas meters were older mechanical dials with no digital output. I set up cameras and wrote an OpenCV and Tesseract OCR script to read the numbers automatically off the dials.
-* **Tracking building occupancy**: A building packed with people needs less heat than an empty building. I used OpenCV to estimate general occupancy trends so the model knows when buildings are actually being used.
+* **Fault-tolerant streaming**: Industrial telemetry frequently drops out or delivers bad readings. I built an ingestion pipeline in Python with Apache Kafka and Redis fallback caching. When a sensor drops offline, the system continues serving the latest valid reading and queues a background retry, achieving 98% uptime across 400+ sensors.
+* **Computer vision for analog meters**: For older gas meters with physical mechanical dials, I mounted cameras and wrote an OpenCV and Tesseract OCR pipeline to extract and digitize meter numbers automatically.
+* **Occupancy tracking**: Extracted aggregate campus occupancy trends using OpenCV to feed thermal load features directly into the time-series pipeline.
 
 ---
 
-## Forecasting Models
+## Custom Machine Learning from Scratch
 
-Steam demand depends heavily on the weather, but also on building construction and recent usage:
+The core of this project was engineering and training the time-series forecasting model from scratch rather than relying on off-the-shelf packages:
 
-* **Practical features**: I added features for building thermal retention (how long brick and concrete hold heat), wind chill, occupancy schedules, and boiler history.
-* **PyTorch models**: I tested four sequential architectures: LSTM, Bidirectional LSTM, GRU, and ConvLSTM.
-* **Results**: The best model brought forecast accuracy from an 81% baseline to 94%, giving operators reliable next-day numbers to plan boiler schedules.
+* **Domain feature engineering**: Engineered inputs reflecting physical thermal retention (how long brick and concrete store heat), wind chill, occupancy schedules, and historical boiler firing behavior.
+* **Custom model development**: Implemented sequential neural network architectures from scratch in PyTorch, writing custom data loaders, loss functions, and training loops across LSTM, Bidirectional LSTM, GRU, and ConvLSTM networks.
+* **Accuracy improvement**: The custom PyTorch models lifted next-day forecast accuracy from an 81% historical baseline up to 94%, giving plant operators dependable numbers to plan firing schedules.
 
 ---
 
-## Monitoring & Safety
+## Operational Tools & Guardrails
 
-Because this is a real heating plant, the AI never controls physical valves directly:
-
-* **Live dashboard**: I built a real-time web dashboard showing live steam demand, upcoming forecasts, and sensor health warnings.
-* **Alerts and reports**: I used LangGraph and MCP to generate automated daily reports and alerts. The system suggests boiler adjustments, but an operator must review and approve every change.
-* **Retraining**: I set up GitHub Actions to run automated data tests and retrain models as the weather shifts between seasons.
+* **Real-time operator interface**: Developed web dashboards displaying live steam demand curves, weather forecasts, and sensor health warnings.
+* **Supervised agent workflows**: Automated daily operational summaries and alert dispatches using LangGraph and Model Context Protocol (MCP). The system suggests boiler adjustments, but requires human operator sign-off before anything is changed.
+* **Automated CI/CD**: Set up GitHub Actions to validate data transforms and trigger model retraining as seasonal weather shifts between fall and winter.
 
 ---
 

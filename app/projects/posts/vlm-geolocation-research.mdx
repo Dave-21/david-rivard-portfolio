@@ -8,45 +8,41 @@ techStack: 'Python, PyTorch, CUDA, Qwen2.5-VL, Kimi-VL, Hugging Face Transformer
 
 ## The Problem
 
-Most geolocation models treat picking a location like a multiple-choice test:
+Standard image geolocation treats location prediction like multiple-choice classification. Under that setup, guessing a neighboring town is scored as completely wrong, the same as guessing an opposite continent.
 
-* If a photo was taken in Paris, guessing Versailles is graded as completely wrong, the same as guessing Tokyo.
-* In reality, Versailles is only 12 miles away, while Tokyo is over 5,000 miles away.
-
-During my research at the University of Central Florida Center for Research in Computer Vision (May 2025 - Aug 2025), I worked on Geo-HiPO. The goal was to teach vision-language models how close a guess is in the real world based on actual distance, rather than just marking guesses as right or wrong.
+During my research appointment at the University of Central Florida Center for Research in Computer Vision (May 2025 - Aug 2025), I worked on Geo-HiPO. The goal was to train vision-language models to output real-world geographic coordinates using continuous physical distance as the supervisory signal.
 
 ---
 
 ## How It Works
 
-We used preference optimization (DPO) to rank model guesses by physical distance:
+We formulated geolocalization as preference optimization (DPO) based on physical distance:
 
-* **Generate guesses**: The model predicts multiple possible locations for an image.
-* **Check distance**: We turn each predicted place name into GPS coordinates and calculate how far it is from the real location.
-* **Rank the guesses**: The closer guess becomes the preferred answer, and the farther guess becomes the rejected answer.
-* **Step-by-step training**: The model first learns broad areas like continents and countries before training on specific cities.
+* **Candidate generation**: The vision-language model outputs multiple possible location guesses for a given image.
+* **Geocoding & distance calculation**: Predicted locations are resolved to GPS coordinates and scored using Haversine great-circle distance against ground truth.
+* **Preference formulation**: The prediction closer to ground truth becomes the chosen sample and the farther guess becomes the rejected sample for DPO.
+* **Curriculum scaling**: The training pipeline scales hierarchically, learning continents and countries first before fine-tuning on regional cities.
 
 <ResearchPoster />
 
 ---
 
-## What I Built
+## Cluster Engineering & Training Stack
 
-* **30M+ image pipeline**: Built multiprocessing data loaders in Python to clean and process over 30 million images, saving over 100 hours of pipeline runtime.
-* **Geocoding validation**: Set up automated checks with GeoNames and OpenStreetMap to filter out bad coordinates and fake place names before training.
-* **Cluster job management**: Managed training and testing across multi-node NVIDIA H100 and V100 GPU clusters using SLURM, running sweeps of up to 50 jobs at once.
-* **Fast batch inference**: Used vLLM to run high-speed batched inference on Qwen2.5-VL and Kimi-VL models to generate test predictions quickly.
-* **Memory optimization**: Set up FlashAttention-2, mixed precision (AMP), and DeepSpeed so large vision models could fit on GPUs without crashing.
-* **Debugging cluster issues**: Resolved GCC and CUDA version conflicts on cluster nodes and fixed token padding bugs between image features and text.
+* **30M+ image pipeline**: Built multiprocessing data loaders in Python to clean and curate 30M+ images from MP-16 and IM2GPS3K, eliminating over 100 hours of pipeline overhead.
+* **Geocoding verification**: Filtered out invalid coordinates, ambiguous locations, and model hallucinations using GeoNames and OpenStreetMap datasets before training.
+* **High-throughput inference**: Integrated vLLM to run batched candidate generation on Qwen2.5-VL and Kimi-VL checkpoints.
+* **Distributed optimization**: Configured FlashAttention-2, PyTorch automatic mixed precision (AMP), and DeepSpeed to fit multimodal models across NVIDIA H100 and V100 clusters.
+* **Systems debugging**: Solved GCC and CUDA version conflicts on cluster nodes and resolved token padding bugs between image patch embeddings and text sequences.
 
 ---
 
 ## Results
 
-Tested on the standard IM2GPS3K benchmark:
+Benchmarking on IM2GPS3K showed clear advantages over standard training:
 
-* **Qwen2.5-VL-7B with HiPO** reached **35.87% accuracy within 25 km** and **54.59% within 250 km**, beating the base model (34.13% and 52.22%).
-* Standard fine-tuning actually lowered accuracy to 33.97%, proving that teaching models with physical distance works much better than simple label matching.
+* **Qwen2.5-VL-7B with HiPO** reached **35.87% accuracy within 25 km** and **54.59% within 250 km**, improving over the base model (34.13% and 52.22%).
+* Standard supervised fine-tuning (SFT) degraded accuracy to 33.97%, proving that distance-based preference ranking produces a significantly stronger supervisory signal than direct token imitation.
 
 ---
 

@@ -8,22 +8,32 @@ techStack: 'Python, C++, C, C#, TypeScript, JavaScript, OpenCV, PyTorch, YOLO, M
 
 ## The Problem
 
-Low Earth Orbit satellites travel at about 17,000 miles per hour. From the ground, an overhead pass lasts only two to three minutes through a telescope lens.
+Low Earth Orbit satellites travel at roughly 17,000 miles per hour, leaving visible pass windows of only two to three minutes through narrow-angle optical sensors. To a camera, a satellite appears as a dim, fast-moving point of light against thousands of bright background stars, making manual telescope aiming and tracking impossible.
 
-To a camera sensor, a satellite looks like a tiny faint speck moving fast against a background of bright stars. Trying to aim and track that by hand is nearly impossible.
-
-At Lake Superior State University (Aug 2024 - May 2025), I wrote software to calculate when satellites pass overhead, detect them in live camera video, and steer motorized telescope mounts to track them automatically.
+During my work at Lake Superior State University (Aug 2024 - May 2025), I developed an automated software system to calculate upcoming pass windows, acquire targets visually in real time, and steer motorized telescope mounts to maintain a continuous lock across the sky.
 
 ---
 
-## What I Built
+## High-Speed Computer Vision (120 FPS)
 
-* **120 FPS vision pipeline**: Wrote C++ and OpenCV code to process video feeds at 120 frames per second to keep up with fast-moving targets.
-* **Target filtering**: Used frame differencing and background subtraction to remove stationary stars so only moving objects remain.
-* **Object verification**: Tested YOLO models to confirm the moving target was a satellite rather than planes, clouds, or camera sensor noise.
-* **Orbital math**: Used SGP4 orbit models and TLE satellite data to calculate the exact path and timing of each pass ahead of time.
-* **Motor steering**: Wrote control software in C++ and Python over RS-232 serial cables to drive the motorized mount and keep targets centered.
-* **Web dashboard**: Built a web interface in React and ASP.NET MVC to schedule passes, watch the live camera feed, and log tracking accuracy.
+* **Real-time video processing**: Wrote high-throughput C++ and OpenCV processing loops running at 120 frames per second to track fast-moving targets without dropping frames.
+* **Star field cancellation**: Combined dynamic background subtraction and frame differencing to eliminate stationary background stars and isolate moving targets.
+* **Target validation**: Evaluated lightweight YOLO object detection models to confirm satellite signatures while rejecting camera sensor artifacts, passing airplanes, and clouds.
+
+---
+
+## Orbital Propagation & Motor Steering
+
+* **Pass trajectory calculation**: Implemented SGP4 orbital propagation algorithms using Two-Line Element (TLE) ephemeris sets to calculate exact satellite trajectories ahead of each pass.
+* **Coordinate transformation**: Converted celestial right ascension and declination into local topocentric azimuth and elevation angles for our ground observatory.
+* **Closed-loop serial control**: Wrote low-latency motor control drivers in C++ and Python communicating over RS-232 serial protocols to steer motorized mounts and keep targets centered.
+
+---
+
+## Operator Telemetry & Dashboards
+
+* **Web interface**: Built a responsive web dashboard using React on the frontend and ASP.NET MVC on the backend to schedule passes and monitor system health.
+* **Telemetry analysis**: Handled real-time streams logging mount encoder positions, exposure settings, and pointing accuracy for post-pass verification.
 
 ---
 

@@ -126,13 +126,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Built real time data ingestion pipelines processing inputs from over 400 industrial sensors, reducing processing latency by up to 90 seconds.
+                Built a real-time data pipeline across 400+ industrial sensors and analog meters, maintaining 98% uptime during sensor dropouts and cutting data latency by 90 seconds.
               </li>
               <li>
-                Trained and benchmarked time series models in Python to forecast steam heating demand, improving prediction accuracy from 81% to 94%.
+                Designed and built deep learning time-series forecasting models from scratch, boosting next-day steam heating demand accuracy from an 81% baseline to 94%.
               </li>
               <li>
-                Built monitoring dashboards and automated plant alerting workflows using Python and Model Context Protocol.
+                Created live operational dashboards and automated anomaly alerting workflows with human operator sign-off before boiler adjustments.
               </li>
             </ul>
             <div className="pt-2">
@@ -163,13 +163,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Ran vision language model inference across multi node V100 and H100 GPU clusters managed with SLURM and Docker.
+                Managed distributed model training and evaluation sweeps across multi-node GPU clusters with up to 50 concurrent jobs.
               </li>
               <li>
-                Built multiprocessing data loaders in Python and PyTorch, curating a dataset of over 30 million images and cutting pipeline processing time by over 100 hours.
+                Built multiprocessing data loaders to clean, validate, and curate over 30 million images, reducing data preparation time by over 100 hours.
               </li>
               <li>
-                Wrote automated evaluation scripts to track coordinate prediction error distributions across dozens of concurrent model runs.
+                Evaluated model checkpoints against physical distance thresholds, achieving 35.87% accuracy within 25 km on the IM2GPS3K benchmark.
               </li>
             </ul>
             <div className="pt-2">
@@ -200,13 +200,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Trained custom Transformer models in PyTorch and Hugging Face, combining token packing and LoRA to maximize training throughput.
+                Implemented autoregressive Transformer language models from scratch in code, exploring self-attention mechanisms and token-packing data loaders.
               </li>
               <li>
-                Built a semantic search RAG pipeline using vector embeddings and similarity search to ground model responses in source documents.
+                Built a semantic search retrieval pipeline using vector embeddings to ground model responses in verified technical reference documentation.
               </li>
               <li>
-                Presented research posters and technical demonstrations on Transformer architecture to faculty and university leadership.
+                Authored formal research posters and delivered live technical demonstrations on attention weight distributions to university faculty and leadership.
               </li>
             </ul>
             <div className="pt-2">
@@ -237,13 +237,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Developed an autonomous tracking system to detect and track Low Earth Orbit satellites using optical camera arrays.
+                Built an automated computer vision tracking system to detect and track Low Earth Orbit satellites in real time at 120 frames per second.
               </li>
               <li>
-                Implemented real time image processing in Python, C++, and OpenCV to isolate fast-moving targets at up to 120 FPS.
+                Combined orbital propagation math with closed-loop motor control to steer camera mounts and keep fast-moving targets centered across overhead passes.
               </li>
               <li>
-                Calculated satellite trajectories from orbital elements to drive automated camera mounts in real time.
+                Developed operator scheduling interfaces and live telemetry feeds to track pass verification metrics and pointing accuracy.
               </li>
             </ul>
             <div className="pt-2">
@@ -274,13 +274,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Replaced an outdated desktop database with a centralized web application and RESTful backend.
+                Modernized county operations by replacing an unstable shared desktop database with a centralized web application and RESTful backend.
               </li>
               <li>
-                Migrated historical county records into a normalized SQL database with zero downtime.
+                Migrated all historical county equipment and document records to a normalized relational database with zero downtime and zero data loss.
               </li>
               <li>
-                Built custom administrative pages, role based access control, and automated reporting tools for county staff.
+                Built custom in-app administrative tools for user management, role-based access control, audit logging, and compliance export reports.
               </li>
             </ul>
             <div className="pt-2">
@@ -307,14 +307,20 @@ export default function Page() {
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
-              Remote Client Projects
+              Independent Client Engagements
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Built custom software, data pipelines, and backend APIs in Python and C# for small business clients.
+                Delivered dozens of custom client applications from design through production deployment (0 to 1), including web platforms, native desktop software, and mobile tools.
               </li>
               <li>
-                Designed and deployed database schemas and web interfaces in React and SQL.
+                Built large-scale data pipelines that processed and visualized high-volume datasets, helping clients uncover trends and automate reporting.
+              </li>
+              <li>
+                Overhauled legacy client applications to fix critical bugs, eliminate performance bottlenecks, and modernize outdated tech stacks.
+              </li>
+              <li>
+                Engineered custom solutions integrating real-time sensors, automation workflows, computer vision, OCR, and voice processing.
               </li>
             </ul>
             <div className="pt-2">
@@ -338,7 +344,7 @@ export default function Page() {
             Technical Skills
           </h2>
           <p className="text-sm font-semibold text-subheading">
-            Specialized engineering domains, frameworks, tools, and platforms. Tap any category to filter.
+            Core engineering domains, frameworks, tools, and infrastructure.
           </p>
         </div>
 
