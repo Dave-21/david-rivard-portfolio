@@ -1,53 +1,41 @@
 ---
-title: 'Chippewa County: Modern Web Asset and Document Management Platform'
+title: 'County Asset & Document Management Platform'
 publishedAt: '2024-05-15'
-summary: 'Re platformed an obsolete Microsoft Access database into a normalized MySQL/MariaDB LAMP web application with RESTful APIs, reducing reporting errors by 45% and increasing processing speeds by over 70%.'
-techStack: 'PHP, MySQL, MariaDB, JavaScript, Apache, Linux, RESTful APIs, HTML5, CSS3, PDO'
-metric: '45% Error Reduction, >70% Processing Speed Increase, Zero Downtime'
-category: 'Full Stack Web Engineering'
+dateRange: 'Jan 2024 - May 2024'
+summary: 'Replaced an outdated desktop database with a centralized web application and RESTful backend, migrating legacy records with zero downtime.'
+techStack: 'PHP, MySQL, MariaDB, JavaScript, Apache, Linux, RESTful APIs, HTML5, CSS3, PDO, RBAC, Bash, Cron, Git'
 ---
 
-## Overview
+## The Problem
 
-As Software Engineer for a contract project with Chippewa County Information Systems (Jan 2024, May 2024), led the architectural design, legacy migration, full stack development, and deployment of a modern asset and document management web platform. The project replaced an unnormalized, single file Microsoft Access system prone to concurrency locks and file corruption with a centralized, high concurrency LAMP web application.
+County staff were tracking physical equipment, property, and official documents using a shared desktop Microsoft Access database.
 
-Delivered a production ready, hardened Linux virtual machine appliance complete with custom administrative tooling, automated backup rotation, schema validation pipelines, and comprehensive technical documentation.
+Because Access was not built for multiple people to use at once, staff had frequent problems:
 
----
+* Files would lock up when two people opened them at the same time.
+* Searches and record lookups were slow.
+* The file was at risk of getting corrupted during edits.
 
-## Technical Architecture & Key Deliverables
-
-### 1. Zero Downtime Legacy Database Migration & Schema Normalization
-* **ETL Pipeline & Schema Design:** Engineered automated PHP and SQL extraction and transformation scripts to migrate thousands of legacy records from Microsoft Access to a normalized MariaDB and MySQL relational schema.
-* **Referential Integrity:** Structured relational entities enforced with foreign keys, strict cascade constraints, and transactional ACID boundaries.
-* **Data Parity & Audit Verification:** Implemented automated pre and post migration validation scripts utilizing row count reconciliation, cryptographic checksum hashing, and orphan record audits to guarantee zero data loss during cutover.
-
-### 2. RESTful API Architecture & Asynchronous Interface
-* **Modular REST Endpoints:** Designed backend PHP API routes handling standard HTTP verbs (GET, POST, PUT, DELETE) with structured JSON request and response payloads and explicit HTTP status codes.
-* **Web Server Routing:** Configured Apache mod_rewrite to direct dynamic resource paths through a centralized PHP routing controller while maintaining direct access for static assets.
-* **Client Side Asynchronous UI:** Built responsive frontend workflows in vanilla JavaScript utilizing Fetch and AJAX to execute non-blocking CRUD operations, live asset transfers, and dynamic DOM updates without full page reloads.
-
-### 3. Query Optimization & Indexing Strategy
-* **Point Lookup Acceleration:** Created unique B-Tree indexes on primary search identifiers and record keys, transforming asset scans into O(log N) point lookups and eliminating table scans.
-* **Composite Filtering:** Added composite indexes to accelerate high frequency multi parameter filtering across county departments.
-* **Covering Index Optimization:** Implemented covering indexes on historical audit logs, enabling instant report generation without secondary memory filesorts and improving overall system processing speeds by **>70%**.
-
-### 4. Input Validation, Dynamic Reporting & Export Engine
-* **Dual Layer Validation:** Enforced client side regex and type constraints in JavaScript paired with server side validation and PHP PDO prepared statements, reducing reporting errors and invalid entries by **45%**.
-* **Dynamic Query & Reporting Tool:** Built an administrative interface allowing custom filtering by date range, department, status, and asset category.
-* **Multi Format Export Pipeline:** Developed stream based export utilities generating downloadable **CSV**, structured **JSON**, and formatted **PDF** audit reports for county compliance and fiscal reviews.
-
-### 5. Custom Administrative Dashboard & Security Hardening
-* **Dedicated Admin Control Panel:** Engineered native, in application administrative interfaces for user provisioning, role assignments, on demand backup triggers, and real-time audit log inspections with user attribution, eliminating the security risks of exposing raw database management tools.
-* **Attack Surface Reduction:** Kept database ports isolated behind application level Role-Based Access Control (RBAC), parameterized PDO queries, and Bcrypt password hashing to prevent unauthorized access.
-* **Turnkey Virtual Appliance:** Packaged and hardened a complete Linux, Apache, MariaDB, PHP (LAMP) virtual machine image configured with automated cron differential backups, log rotation, and step by step deployment documentation.
+As a Software Engineer on contract for Chippewa County Information Systems (Jan 2024 - May 2024), I was hired to replace the desktop file with a secure, centralized web application accessible from standard web browsers on the county network.
 
 ---
 
-## Technical Stack
+## What I Built
 
-* **Backend:** PHP, RESTful JSON APIs, Apache 2.4 (mod_rewrite), PDO
-* **Database:** MySQL / MariaDB (Normalized Relational Schema, B-Tree & Composite Indexing)
-* **Frontend & Admin UI:** Native Custom Admin Dashboards, JavaScript (ES6+ Fetch/AJAX), HTML5, CSS3
-* **Security & Auth:** Application-Level RBAC, Bcrypt Password Hashing, Session Authentication
-* **Deployment & Tooling:** Hardened Linux VM Appliance, Bash, Cron, Git
+* **Database migration**: Designed a clean relational schema in MySQL and MariaDB, wrote migration scripts in PHP and SQL, and migrated all historical records with zero data loss.
+* **Fast web interface**: Built a clean interface in vanilla JavaScript using Fetch and AJAX so staff could search, filter, and edit records instantly without full page reloads.
+* **Secure backend APIs**: Wrote modular PHP REST endpoints using PDO prepared statements to handle lookups, edits, and file uploads securely.
+* **Custom admin dashboard**: Built dedicated in-app admin pages for adding users, managing roles, and setting department permissions without exposing raw database tools.
+* **Audit log viewer**: Added an audit history page with timestamps and user names so administrators can see who modified any record.
+* **Export tools**: Built one-click report tools so staff can export filtered data to CSV, JSON, or formatted PDF files for county audits.
+* **Server setup**: Deployed the app on a dedicated Linux virtual machine with automated daily backup cron jobs and strict file permissions.
+
+---
+
+## Technologies Used
+
+* **Backend & APIs**: PHP, RESTful APIs, PDO (Prepared Statements), Apache 2.4, mod_rewrite, Session Management
+* **Database Architecture**: MySQL, MariaDB, 3NF Normalization, B-Tree Indexing, Composite Indexing, Foreign Keys, ACID Transactions
+* **Frontend Development**: Vanilla JavaScript (ES6+ Fetch / AJAX), HTML5, CSS3, Responsive UI
+* **Security & Administration**: Role-Based Access Control (RBAC), Custom Admin Dashboards, User Management, Bcrypt Password Hashing, Audit Logging
+* **Infrastructure & Tooling**: Linux Virtual Machine, Bash Automation, Cron Scheduling, Automated Backups, Git

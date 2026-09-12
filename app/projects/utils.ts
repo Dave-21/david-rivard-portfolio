@@ -4,6 +4,7 @@ import path from 'path'
 export type Metadata = {
   title: string
   publishedAt: string
+  dateRange?: string
   summary: string
   image?: string
   techStack?: string

@@ -1,39 +1,31 @@
 ---
-title: 'Custom LLM Pre Training and RAG Information Retrieval Architecture'
+title: 'Custom LLM & RAG Architecture'
 publishedAt: '2025-04-30'
-summary: 'Architected and trained a custom Large Language Model with semantic search RAG retrieval, leading institutional AI enablement demonstrations.'
-techStack: 'Python, PyTorch, Hugging Face, Transformers, Vector DBs, RAG, PEFT'
-metric: 'Custom Architecture, Leadership Showcase'
-category: 'AI and Software Engineering'
+dateRange: 'Aug 2024 - May 2025'
+summary: 'Built and trained custom Transformer language models in PyTorch, developed a vector search RAG pipeline for verified documents, and presented attention mechanism research to university leadership.'
+techStack: 'Python, PyTorch, Hugging Face Transformers, Hugging Face Datasets, Hugging Face Accelerate, Vector Databases, RAG, PEFT, LoRA, CUDA, bitsandbytes, Linux, Conda, C++, Bash'
 ---
 
-## Overview
+## The Goal
 
-As AI Research Lead at Lake Superior State University (Aug 2024, May 2025), I architected, trained, and evaluated a custom Large Language Model from the ground up, coupled with advanced Retrieval-Augmented Generation (RAG) capabilities.
+Instead of just calling paid APIs, I wanted to understand how language models work under the hood by building one in code.
 
-In addition to technical model development, I conducted independent mathematical research on Transformer attention mechanisms and presented research posters and technical demonstrations to university leadership including the University President.
+At Lake Superior State University (Aug 2024 - May 2025), I implemented Transformer models from scratch in PyTorch. The goal was to train small, specialized models on local GPUs and connect them to a semantic search pipeline (RAG) so the model answers technical questions using real documents instead of hallucinating.
 
 ---
 
-## Key Technical Contributions
+## What I Built
 
-### 1. Model Architecture and Training
-* Built and pre trained custom Transformer models using PyTorch and Hugging Face Transformers.
-* Applied Parameter-Efficient Fine-Tuning (PEFT and LoRA) and quantization strategies to optimize memory usage during training and inference.
-* Implemented tokenization and dataset token packing algorithms to maximize training throughput.
-
-### 2. Semantic Search and RAG Vector Pipeline
-* Designed a Retrieval-Augmented Generation (RAG) framework using dense vector embeddings and similarity search algorithms.
-* Constructed automated indexing pipelines to parse, chunk, and embed structured and unstructured document repositories.
-* Integrated semantic reranking to minimize hallucinations and ensure verifiable, source grounded model outputs.
-
-### 3. Technical Communication & Institutional AI Enablement
-* Authored independent research on Transformer mathematical foundations and LLM architecture.
-* Delivered executive AI enablement presentations and live research poster sessions to university executives and faculty, driving adoption of generative AI systems across research departments.
+* **Transformer from scratch**: Wrote the complete Transformer architecture in PyTorch, including multi-head self-attention and positional encodings.
+* **Custom tokenizers**: Built Byte-Pair Encoding (BPE) tokenizers and token-packing data loaders to pack text tightly and avoid wasting GPU memory on padding tokens.
+* **Efficient fine-tuning**: Tested LoRA and QLoRA adapters with 4-bit and 8-bit quantization (bitsandbytes) to train models under strict GPU memory limits.
+* **Vector search pipeline**: Built a document processing pipeline that chunks and embeds technical manuals into a vector database for similarity search.
+* **Answer grounding**: Added a semantic reranking step to pull the most relevant reference passages, ensuring answers cite real source documents.
+* **Faculty presentation**: Designed a research poster explaining Transformer attention mechanisms and gave live demos to university faculty and leadership.
 
 <ResearchPoster
   title="Educational AI Enablement & LLM Architecture Research Poster"
-  subtitle="Presented to LSSU Leadership to demystify Transformer architectures and drive institutional AI adoption"
+  subtitle="Presented to LSSU leadership and faculty explaining Transformer architecture and retrieval pipelines"
   pdfSrc="/posters/AI_Adoption_Research_Poster.pdf"
   previewSrc="/posters/ai-adoption-poster-preview.png"
   aspectRatioClass="aspect-[35/42]"
@@ -41,8 +33,10 @@ In addition to technical model development, I conducted independent mathematical
 
 ---
 
-## Technical Stack
+## Technologies Used
 
-* **AI and NLP**: PyTorch, Hugging Face (Transformers, Accelerate, PEFT), Vector Databases
-* **Languages**: Python, Bash, CUDA, C++
-* **Systems**: Linux, Git, Mamba/Conda
+* **Deep Learning & NLP**: PyTorch, Hugging Face Transformers, Hugging Face Datasets, Hugging Face Accelerate, Attention Mechanisms (Multi-Head Self-Attention, Scaled Dot-Product), Positional Encodings
+* **Tokenization & Data Pipelines**: Byte-Pair Encoding (BPE), Token Packing, Custom Data Loaders, Multiprocessing, NumPy
+* **Parameter-Efficient Training**: PEFT, LoRA, QLoRA, 8-Bit Quantization, 4-Bit Quantization, bitsandbytes
+* **Retrieval & Semantic Search**: Vector Databases, Sentence Embeddings, Cosine Similarity Retrieval, Semantic Reranking, Document Chunking & Parsing, RAG
+* **Languages & Systems**: Python, CUDA, C++, Bash, Linux, Conda, Git

@@ -1,43 +1,59 @@
 ---
-title: 'DTE Energy x LSSU: Industrial AI Steam Plant Optimization and Sensor Pipeline'
+title: 'Industrial Steam Plant Optimization'
 publishedAt: '2026-04-15'
-summary: 'Engineered a fault tolerant 400+ sensor data ingestion pipeline and predictive demand models, improving accuracy from 81% to 94% with 98% uptime.'
-techStack: 'Python, PyTorch, LangGraph, MCP, Spark, Kafka, GitHub Actions, Docker'
-metric: '94% Forecast Accuracy, 90s Latency Reduction'
-category: 'Software Systems'
+dateRange: 'Apr 2025 - Present'
+summary: 'Built a sensor pipeline across 400+ industrial sensors and trained PyTorch time-series models to forecast heating demand, improving accuracy from 81% to 94%.'
+techStack: 'Python, PyTorch, LangGraph, Model Context Protocol (MCP), Claude Code, PySpark, Apache Kafka, PostgreSQL, Redis, OpenCV, Tesseract OCR, DeepFace, Docker, GitHub Actions, Linux, NumPy, pandas, scikit-learn, REST APIs'
 ---
 
-## Overview
+## The Problem
 
-Working through Lake Superior State University in partnership with DTE Energy as a Systems Engineer (Apr 2025, Present), I architected an end-to-end data pipeline and optimization system for steam plant energy management.
+The university heating plant was built in 1969 and heats 17 campus buildings through underground steam pipes. It runs on three large natural gas boilers with about 3,400 total boiler horsepower.
 
-By continuously ingesting sensor telemetry across over 400 industrial nodes, our system accurately forecasts building heating demand, enabling plant operators to optimize energy dispatch, minimize fuel consumption, and reduce operational costs.
+Steam boilers take hours to warm up, and large buildings take time to heat up or cool down:
 
----
+* If operators underestimate how much heat is needed, buildings get cold and the plant has to scramble to catch up.
+* If they overestimate, the boilers burn extra gas and vent expensive steam into the air.
 
-## Technical Highlights and System Architecture
-
-### 1. Fault Tolerant Data Pipeline and High Availability Ingestion
-* **Scale**: Architected a real-time streaming ETL pipeline processing continuous inputs from 400+ industrial sensors (weather telemetry, building occupancy feeds, and OCR gas meter readings).
-* **Multi-Modal Feed Ingestion**: Integrated asynchronous OCR document processing using Tesseract to parse unstructured physical logs, alongside facial detection via DeepFace for live building occupancy tracking.
-* **Latency and Reliability**: Reduced end-to-end data processing latency by up to 90 seconds while maintaining 98% pipeline uptime with versioned artifact fallbacks and automatic retry scheduling.
-
-### 2. Predictive Heating Demand Forecasting
-* Researched, benchmarked, and tuned deep time-series neural network architectures optimized to prevent pattern overfitting and generalize across seasonal weather swings:
-  * Recurrent Neural Networks (RNN, LSTM, BiLSTM, GRU)
-  * Convolutional LSTMs (ConvLSTM)
-  * Minimal-variable neural network architectures tailored for stable generalization
-* Improved overall predictive heating demand accuracy from 81% to 94%, dramatically reducing thermal over-generation.
-
-### 3. Agentic Workflow Automation and Monitoring Dashboards
-* Engineered autonomous operational workflows using LangGraph and Model Context Protocol (MCP), enforcing strict guardrails and human-in-the-loop code verification.
-* Developed real-time internal monitoring web dashboards for plant engineers.
-* Standardized enterprise GitOps pipelines via GitHub Actions for automated model retraining, programmatic validation checks, threshold tuning, and daily operational reporting.
+For years, operators had to manually guess boiler settings based on past experience and outdoor temp sensors. The goal of this project was to give operators an accurate next-day hourly forecast so they can adjust boiler output before big weather changes hit.
 
 ---
 
-## Technical Stack
+## The Data Pipeline
 
-* **Machine Learning and Time Series**: PyTorch, scikit-learn, OpenCV, Tesseract, DeepFace, NumPy, pandas
-* **Data Ingestion and Pipelines**: PySpark, Apache Kafka, PostgreSQL, Redis, REST APIs
-* **Automation and DevOps**: LangGraph, MCP, Docker, GitHub Actions, Linux
+The system pulls live data from over 400 sensors across the plant and connected buildings:
+
+* **Messy sensor data**: Industrial sensors frequently lose power or drop off the network. I built an ingestion pipeline in Python using Kafka and Redis caching. If a sensor drops offline, the system uses the last good reading and retries in the background. This kept the pipeline at 98% uptime and cut data delays by up to 90 seconds.
+* **Reading gas meters with OCR**: Several gas meters were older mechanical dials with no digital output. I set up cameras and wrote an OpenCV and Tesseract OCR script to read the numbers automatically off the dials.
+* **Tracking building occupancy**: A building packed with people needs less heat than an empty building. I used OpenCV to estimate general occupancy trends so the model knows when buildings are actually being used.
+
+---
+
+## Forecasting Models
+
+Steam demand depends heavily on the weather, but also on building construction and recent usage:
+
+* **Practical features**: I added features for building thermal retention (how long brick and concrete hold heat), wind chill, occupancy schedules, and boiler history.
+* **PyTorch models**: I tested four sequential architectures: LSTM, Bidirectional LSTM, GRU, and ConvLSTM.
+* **Results**: The best model brought forecast accuracy from an 81% baseline to 94%, giving operators reliable next-day numbers to plan boiler schedules.
+
+---
+
+## Monitoring & Safety
+
+Because this is a real heating plant, the AI never controls physical valves directly:
+
+* **Live dashboard**: I built a real-time web dashboard showing live steam demand, upcoming forecasts, and sensor health warnings.
+* **Alerts and reports**: I used LangGraph and MCP to generate automated daily reports and alerts. The system suggests boiler adjustments, but an operator must review and approve every change.
+* **Retraining**: I set up GitHub Actions to run automated data tests and retrain models as the weather shifts between seasons.
+
+---
+
+## Technologies Used
+
+* **Time-Series & Machine Learning**: PyTorch, scikit-learn, LSTM, BiLSTM, GRU, ConvLSTM, NumPy, pandas, SciPy
+* **Computer Vision & OCR**: OpenCV, Tesseract OCR, DeepFace, Image Preprocessing, Thresholding
+* **Data Ingestion & Streaming**: Apache Kafka, Apache Spark (PySpark), Custom Data Loaders, ETL Pipelines, Batch Processing
+* **Databases & Caching**: PostgreSQL, Redis, Time-Series Data Management, Query Optimization
+* **Agentic Workflows & Tooling**: Model Context Protocol (MCP), LangGraph, Claude Code, REST APIs, JSON APIs
+* **Infrastructure & DevOps**: Docker, GitHub Actions CI/CD, Linux, Virtual Machine Deployment, Git, Bash

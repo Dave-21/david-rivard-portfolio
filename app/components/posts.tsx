@@ -21,7 +21,7 @@ export function ProjectPosts({ limit }: { limit?: number }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {sortedProjects.map((project) => {
-        const { title, publishedAt, summary, techStack, metric, category } =
+        const { title, publishedAt, dateRange, summary, techStack } =
           project.metadata
 
         const tags = techStack ? techStack.split(',').slice(0, 4) : []
@@ -34,13 +34,8 @@ export function ProjectPosts({ limit }: { limit?: number }) {
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
-                {category && (
-                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2.5 py-1 rounded-full border border-blue-200 dark:border-blue-900/50">
-                    {category}
-                  </span>
-                )}
                 <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">
-                  {formatDate(publishedAt)}
+                  {dateRange || formatDate(publishedAt)}
                 </span>
               </div>
 
@@ -54,13 +49,6 @@ export function ProjectPosts({ limit }: { limit?: number }) {
             </div>
 
             <div>
-              {metric && (
-                <div className="mb-4 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-900/40 inline-flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  {metric}
-                </div>
-              )}
-
               {tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {tags.map((tag, i) => (

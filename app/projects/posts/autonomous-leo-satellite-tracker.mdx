@@ -1,38 +1,37 @@
 ---
-title: 'Autonomous LEO Satellite Detection and Tracking System'
+title: 'Autonomous Satellite Tracking System'
 publishedAt: '2025-05-15'
-summary: 'Led engineering of a scalable computer vision system to detect, identify, and track Low Earth Orbit satellites autonomously at 120 FPS.'
-techStack: 'Python, C++, OpenCV, PyTorch, YOLO, React, ASP.NET'
-metric: '120 FPS Processing, 200 GB/Day Telemetry'
-category: 'Computer Vision and Systems'
+dateRange: 'Aug 2024 - May 2025'
+summary: 'Built an automated computer vision system that tracks Low Earth Orbit satellites at 120 FPS using high-speed cameras, orbital physics models, and motorized mounts.'
+techStack: 'Python, C++, C, C#, TypeScript, JavaScript, OpenCV, PyTorch, YOLO, ML.NET, SGP4/TLE, React, ASP.NET MVC, .NET Core, Embedded Linux, Serial Protocols, SQL, Bash'
 ---
 
-## Overview
+## The Problem
 
-As Lead Software Engineer on university research at Lake Superior State University (Aug 2024, May 2025), I led an engineering team building an autonomous computer vision system designed to detect, identify, and continuously track Low Earth Orbit (LEO) satellites in real time using small aperture optical arrays.
+Low Earth Orbit satellites travel at about 17,000 miles per hour. From the ground, an overhead pass lasts only two to three minutes through a telescope lens.
 
----
+To a camera sensor, a satellite looks like a tiny faint speck moving fast against a background of bright stars. Trying to aim and track that by hand is nearly impossible.
 
-## Technical Innovations and Architecture
-
-### 1. High Speed Computer Vision & Telemetry Engine (120 FPS)
-* Developed high-speed image processing pipelines capable of isolating fast-moving, low-brightness point targets against astronomical star fields at **120 images per second (120 FPS)**.
-* Created frame-by-frame image processing algorithms, feature extraction matrices, and trajectory prediction sequences to perform confident visual entity matching.
-* Combined frame differencing, dynamic background subtraction, and object detection models (YOLO and OpenCV) to classify optical satellite signatures in high-noise environments.
-
-### 2. Orbital Trajectory Prediction & Autonomous Control
-* Implemented real-time orbital trajectory algorithms using Two Line Element (TLE) sets and SGP4 propagation models.
-* Calculated target azimuth and elevation angles to drive automated motor mounts, ensuring continuous closed-loop camera tracking across pass windows.
-* Low-latency motor control loops built in C++ and Python delivered autonomous target acquisition without manual operator intervention.
-
-### 3. Full-Stack Web Dashboards & Telemetry Analytics (200 GB/Day)
-* Built secure full-stack web dashboards using React and ASP.NET MVC server-side APIs for live system observability, serving **300 active users** and processing up to **200 GB of telemetry data daily**.
-* Built real-time analytics pipelines to record tracking metrics, flag structural verification anomalies, and monitor system health.
+At Lake Superior State University (Aug 2024 - May 2025), I wrote software to calculate when satellites pass overhead, detect them in live camera video, and steer motorized telescope mounts to track them automatically.
 
 ---
 
-## Key Technologies
+## What I Built
 
-* **Languages**: Python, C++, C, C#, TypeScript/JavaScript
-* **Vision and ML**: OpenCV, PyTorch, YOLO, Pillow, ML.NET
-* **Web and Infrastructure**: React, ASP.NET, Embedded Linux, REST APIs, Serial Protocols
+* **120 FPS vision pipeline**: Wrote C++ and OpenCV code to process video feeds at 120 frames per second to keep up with fast-moving targets.
+* **Target filtering**: Used frame differencing and background subtraction to remove stationary stars so only moving objects remain.
+* **Object verification**: Tested YOLO models to confirm the moving target was a satellite rather than planes, clouds, or camera sensor noise.
+* **Orbital math**: Used SGP4 orbit models and TLE satellite data to calculate the exact path and timing of each pass ahead of time.
+* **Motor steering**: Wrote control software in C++ and Python over RS-232 serial cables to drive the motorized mount and keep targets centered.
+* **Web dashboard**: Built a web interface in React and ASP.NET MVC to schedule passes, watch the live camera feed, and log tracking accuracy.
+
+---
+
+## Technologies Used
+
+* **Computer Vision & Image Processing**: OpenCV, Frame Differencing, Background Subtraction, Thresholding, Feature Detection, Pillow (PIL)
+* **Machine Learning**: PyTorch, YOLO (Object Detection), ML.NET
+* **Orbital Mechanics & Control Systems**: SGP4 Propagation, Two-Line Element (TLE) Datasets, Coordinate Transforms (RA/Dec to Az/El), RS-232 Serial Protocols, Closed-Loop PID Control
+* **Languages**: Python, C++, C, C#, TypeScript, JavaScript, SQL, Bash
+* **Web & Frameworks**: React, ASP.NET MVC, .NET Core, RESTful APIs, AJAX / Fetch, HTML5, CSS3
+* **Systems & Environment**: Embedded Linux, Multithreading, Asynchronous I/O, Git

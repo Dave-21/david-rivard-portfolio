@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { SkillsSection } from 'app/components/skills'
 
 export default function Page() {
   return (
@@ -29,7 +30,7 @@ export default function Page() {
               Software Engineer
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-body-main font-medium pt-1">
-              Software Engineer specializing in scalable backend services, cloud infrastructure, container orchestration, and CI/CD automation. Experienced in building fault tolerant data pipelines and high availability distributed systems designed for reliability and performance.
+              Software engineer focused on backend systems, data pipelines, and machine learning infrastructure. Experienced with Python, C++, Linux clusters, and cloud deployments.
             </p>
           </div>
         </div>
@@ -67,9 +68,6 @@ export default function Page() {
             </svg>
             LinkedIn
           </a>
-          <span className="text-xs text-muted-main font-mono font-bold w-full sm:w-auto sm:ml-auto pt-1 sm:pt-0">
-            Cornell, MI • (906) 233-8015
-          </span>
         </div>
 
         {/* Compact High-Contrast Career Metrics Bar */}
@@ -120,21 +118,21 @@ export default function Page() {
                 Software Engineer →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                Apr 2025, Present
+                Apr 2025 - Present
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
-              Lake Superior State University in partnership with DTE Energy (Remote / Sault Ste. Marie, MI)
+              DTE Energy, Grant-Funded (Remote)
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Architected fault tolerant data ingestion pipelines processing continuous inputs from over 400 industrial sensors, reducing data processing latency by up to 90 seconds and achieving 98% uptime.
+                Built real time data ingestion pipelines processing inputs from over 400 industrial sensors, reducing processing latency by up to 90 seconds.
               </li>
               <li>
-                Optimized predictive heating demand forecast models in Python, improving accuracy from 81% to 94% and deployed internal dashboards for live plant monitoring and optimization.
+                Trained and benchmarked time series models in Python to forecast steam heating demand, improving prediction accuracy from 81% to 94%.
               </li>
               <li>
-                Engineered autonomous systems and workflow automations using LangGraph and MCP, implementing strict guardrails and rigorous human in the loop code reviews to ensure reliability.
+                Built monitoring dashboards and automated plant alerting workflows using Python and Model Context Protocol.
               </li>
             </ul>
             <div className="pt-2">
@@ -154,10 +152,10 @@ export default function Page() {
                 href="/projects/vlm-geolocation-research"
                 className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
-                AI Research Intern →
+                AI Research Engineer →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                May 2025, Aug 2025
+                May 2025 - Aug 2025
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
@@ -165,13 +163,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Deployed parallel workloads across multi node Linux clusters using Docker, automating the high throughput ingestion and curation of datasets containing over 30 million images.
+                Ran vision language model inference across multi node V100 and H100 GPU clusters managed with SLURM and Docker.
               </li>
               <li>
-                Wrote highly optimized data pipelines and conducted rigorous peer reviews, reducing overall image processing by over 100 hours per dataset, and inference iterations by weeks.
+                Built multiprocessing data loaders in Python and PyTorch, curating a dataset of over 30 million images and cutting pipeline processing time by over 100 hours.
               </li>
               <li>
-                Scaled geolocation model inference on V100 and H100 SLURM clusters running up to 30 experiments concurrently to cut iteration time.
+                Wrote automated evaluation scripts to track coordinate prediction error distributions across dozens of concurrent model runs.
               </li>
             </ul>
             <div className="pt-2">
@@ -191,10 +189,10 @@ export default function Page() {
                 href="/projects/custom-llm-rag-architecture"
                 className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
-                AI Research Lead (University Research) →
+                AI Research Engineer →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                Aug 2024, May 2025
+                Aug 2024 - May 2025
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
@@ -202,10 +200,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Architected and trained a custom Large Language Model from the ground up, implementing advanced prompt engineering and semantic search RAG retrieval systems.
+                Trained custom Transformer models in PyTorch and Hugging Face, combining token packing and LoRA to maximize training throughput.
               </li>
               <li>
-                Delivered AI enablement presentations and research posters to university leadership including the University President to demystify complex LLM concepts and drive institutional adoption.
+                Built a semantic search RAG pipeline using vector embeddings and similarity search to ground model responses in source documents.
+              </li>
+              <li>
+                Presented research posters and technical demonstrations on Transformer architecture to faculty and university leadership.
               </li>
             </ul>
             <div className="pt-2">
@@ -225,10 +226,10 @@ export default function Page() {
                 href="/projects/autonomous-leo-satellite-tracker"
                 className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
-                Lead Software Engineer (University Research) →
+                Software Engineer →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                Aug 2024, May 2025
+                Aug 2024 - May 2025
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
@@ -236,10 +237,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Led a team building a scalable autonomous system to detect, identify, and track Low Earth Orbit satellites using small aperture optical cameras.
+                Developed an autonomous tracking system to detect and track Low Earth Orbit satellites using optical camera arrays.
               </li>
               <li>
-                Created algorithms for satellite identification, orbital trajectory prediction, and real time image processing.
+                Implemented real time image processing in Python, C++, and OpenCV to isolate fast-moving targets at up to 120 FPS.
+              </li>
+              <li>
+                Calculated satellite trajectories from orbital elements to drive automated camera mounts in real time.
               </li>
             </ul>
             <div className="pt-2">
@@ -252,17 +256,17 @@ export default function Page() {
             </div>
           </div>
 
-          {/* CHIPPEWA COUNTY CONTRACT PROJECT */}
+          {/* CHIPPEWA COUNTY CONTRACT */}
           <div className="p-6 rounded-2xl glass-card hover:border-blue-500/60 dark:hover:border-blue-400/60 transition-all duration-200 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <Link
                 href="/projects/chippewa-county-inventory-system"
                 className="text-lg font-extrabold text-heading hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:[text-shadow:0_0_18px_rgba(37,99,235,0.6)] dark:hover:[text-shadow:0_0_22px_rgba(96,165,250,0.75)] origin-left transition-all duration-300 ease-out inline-block w-fit"
               >
-                Software Engineer (Contract Project) →
+                Software Engineer (Contract) →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                Jan 2024, May 2024
+                Jan 2024 - May 2024
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
@@ -270,13 +274,13 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Re-platformed an obsolete Microsoft Access database into a scalable MySQL/MariaDB web application with RESTful APIs, reducing reporting errors by 45%.
+                Replaced an outdated desktop database with a centralized web application and RESTful backend.
               </li>
               <li>
-                Engineered zero-downtime ETL migration scripts to transfer legacy records while ensuring complete data integrity and verification.
+                Migrated historical county records into a normalized SQL database with zero downtime.
               </li>
               <li>
-                Optimized relational database queries and indexing strategies, increasing search and transaction processing speeds by over 70%.
+                Built custom administrative pages, role based access control, and automated reporting tools for county staff.
               </li>
             </ul>
             <div className="pt-2">
@@ -299,7 +303,7 @@ export default function Page() {
                 Freelance Software Developer →
               </Link>
               <span className="text-xs font-mono font-bold badge-pill-neutral px-2.5 py-1 rounded-md w-fit">
-                Jan 2019, Dec 2022
+                Jan 2019 - Dec 2022
               </span>
             </div>
             <div className="text-sm font-bold text-subheading">
@@ -307,7 +311,10 @@ export default function Page() {
             </div>
             <ul className="list-disc pl-4 text-sm text-body-main space-y-1.5 pt-1">
               <li>
-                Delivered technology enabled solutions for diverse clients, scoping independent projects end to end to build robust ETL pipelines and performant backend APIs in Python and C#.
+                Built custom software, data pipelines, and backend APIs in Python and C# for small business clients.
+              </li>
+              <li>
+                Designed and deployed database schemas and web interfaces in React and SQL.
               </li>
             </ul>
             <div className="pt-2">
@@ -331,63 +338,11 @@ export default function Page() {
             Technical Skills
           </h2>
           <p className="text-sm font-semibold text-subheading">
-            Tools, platforms, databases, and programming languages.
+            Specialized engineering domains, frameworks, tools, and platforms. Tap any category to filter.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-5 rounded-2xl glass-card space-y-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-              Platform & DevOps
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {['Kubernetes', 'Docker', 'Terraform', 'AWS', 'Azure', 'GCP', 'GitOps', 'CI/CD', 'Linux', 'SLURM', 'CUDA', 'Mamba/Conda'].map((skill) => (
-                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-blue">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="p-5 rounded-2xl glass-card space-y-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
-              Programming & AI Tools
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {['Python', 'Go', 'C#', 'TypeScript', 'JavaScript', 'C++', 'C', 'PHP', 'Bash', 'REST APIs', 'PyTorch', 'Hugging Face', 'Claude Code', 'LangGraph', 'MCP'].map((skill) => (
-                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-purple">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="p-5 rounded-2xl glass-card space-y-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              Systems & Databases
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {['PostgreSQL', 'MS SQL Server', 'MySQL', 'MariaDB', 'Redis', 'Apache Spark', 'Kafka', 'ETL Pipelines'].map((skill) => (
-                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-emerald">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="p-5 rounded-2xl glass-card space-y-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-              ML Acceleration
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {['vLLM', 'DeepSpeed', 'FlashAttention', 'bitsandbytes', 'PyTorch AMP', 'Quantization (FP8/NF4)'].map((skill) => (
-                <span key={skill} className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-amber">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+        <SkillsSection />
       </section>
 
       <hr className="border-slate-300 dark:border-neutral-800" />

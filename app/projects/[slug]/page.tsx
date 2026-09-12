@@ -70,9 +70,7 @@ export default async function Project({
     notFound()
   }
 
-  const { title, publishedAt, summary, techStack, metric, category } =
-    post.metadata
-  const tags = techStack ? techStack.split(',') : []
+  const { title, publishedAt, dateRange, summary } = post.metadata
 
   return (
     <article className="space-y-8 py-4">
@@ -122,13 +120,8 @@ export default async function Project({
       {/* Header Info */}
       <div className="space-y-4 pb-6 border-b border-slate-300 dark:border-neutral-800">
         <div className="flex items-center justify-between gap-2">
-          {category && (
-            <span className="text-xs font-bold uppercase tracking-wider badge-pill-blue px-3 py-1 rounded-full">
-              {category}
-            </span>
-          )}
           <span className="text-xs text-muted-main font-mono font-bold">
-            {formatDate(publishedAt)}
+            {dateRange || formatDate(publishedAt)}
           </span>
         </div>
 
@@ -140,39 +133,7 @@ export default async function Project({
           {summary}
         </p>
 
-        {/* Metric Highlight Box */}
-        {metric && (
-          <div className="p-4 rounded-xl badge-pill-emerald flex items-center gap-3 shadow-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <div>
-              <div className="text-xs font-bold uppercase tracking-wider">
-                Key Impact & Outcome
-              </div>
-              <div className="text-sm font-extrabold">
-                {metric}
-              </div>
-            </div>
-          </div>
-        )}
 
-        {/* Tech Stack Pills */}
-        {tags.length > 0 && (
-          <div className="pt-2">
-            <div className="text-xs font-bold text-muted-main mb-2">
-              TECHNOLOGIES USED
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="text-xs font-mono font-bold px-2.5 py-1 rounded-md badge-pill-neutral"
-                >
-                  {tag.trim()}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* MDX Body */}
