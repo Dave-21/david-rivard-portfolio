@@ -4,6 +4,8 @@ import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getProjectPosts } from 'app/projects/utils'
 import { baseUrl } from 'app/sitemap'
 
+export const dynamic = 'force-static'
+
 export async function generateStaticParams() {
   let posts = getProjectPosts()
   return posts.map((post) => ({

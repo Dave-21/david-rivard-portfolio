@@ -57,8 +57,25 @@ function getMDXData(dir: string) {
   })
 }
 
+import { RAW_POSTS } from './posts-data'
+
 export function getProjectPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'projects', 'posts'))
+  try {
+    const dir = path.join(process.cwd(), 'app', 'projects', 'posts')
+    if (fs.existsSync(dir)) {
+      const data = getMDXData(dir)
+      if (data.length > 0) return data
+    }
+  } catch {}
+
+  return RAW_POSTS.map((post) => {
+    const { metadata, content } = parseFrontmatter(post.raw)
+    return {
+      metadata,
+      slug: post.slug,
+      content,
+    }
+  })
 }
 
 export function formatDate(date: string, includeRelative = false) {

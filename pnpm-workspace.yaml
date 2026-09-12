@@ -3,4 +3,6 @@ packages:
 
 allowBuilds:
   '@vercel/speed-insights': true
+  esbuild: true
   sharp: true
+  workerd: true
